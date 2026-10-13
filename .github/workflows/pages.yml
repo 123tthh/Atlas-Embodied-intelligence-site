@@ -50,6 +50,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     permissions:
+      contents: read
       pages: write
       id-token: write
     environment:
@@ -59,3 +60,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Check out public verification script
+        uses: actions/checkout@v6
+      - name: Verify public page and anonymous inbox access
+        run: node scripts/check-public-site.mjs
