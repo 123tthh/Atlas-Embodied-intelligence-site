@@ -1,0 +1,25 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import ts from 'typescript';
+const read = name => readFile(new URL('../'+name,import.meta.url),'utf8');
+const moduleUrl = source => 'data:text/javascript;base64,'+Buffer.from(ts.transpileModule(source,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ES2022}}).outputText).toString('base64');
+const domainUrl=moduleUrl(await read('lib/domain.ts'));
+const regionsUrl=moduleUrl(await read('lib/regions.ts'));
+const directory=await import(moduleUrl((await read('lib/directory.ts')).replace("from './domain'",'from '+JSON.stringify(domainUrl)).replace("from './regions'",'from '+JSON.stringify(regionsUrl))));
+const taxonomy=await import(moduleUrl(await read('lib/taxonomy.ts')));
+const domain=await import(domainUrl);
+const data=JSON.parse(await read('lib/directory.json')),catalog=JSON.parse(await read('lib/catalog.json'));
+let passed=0;const check=(name,fn)=>{fn();passed++;console.log('PASS '+name)};
+const search=q=>data.people.filter(p=>directory.directoryMatches(q,directory.personSearchValues(p,data))).map(p=>p.id);
+check('CMU RI and reverse-order name find Guanya Shi',()=>assert.deepEqual(search('CMU RI shi guanya'),['guanya-shi']));
+check('World Labs and compact name find Fei-Fei Li',()=>assert.deepEqual(search('world-labs li feifei'),['fei-fei-li']));
+check('Chinese company queries resolve verified people',()=>{assert(search('银河通用').includes('he-wang'));assert(search('宇树').includes('wang-xingxing'))});
+check('Organization queries also find lab aliases',()=>assert(data.organizations.some(o=>o.id==='cmu'&&directory.directoryMatches('LeCAR',directory.organizationSearchValues(o,data)))));
+check('Directory relations resolve and stay in the correct institution',()=>{const orgs=new Map(data.organizations.map(o=>[o.id,o])),labs=new Map(data.labs.map(l=>[l.id,l]));assert.equal(orgs.size,data.organizations.length);assert.equal(labs.size,data.labs.length);assert.equal(new Set(data.people.map(p=>p.id)).size,data.people.length);for(const l of data.labs)assert(orgs.has(l.organizationId));for(const p of data.people){assert(domain.safeUrl(p.homepage));assert(p.affiliations.length);for(const a of p.affiliations){assert(orgs.has(a.organizationId));if(a.labId)assert.equal(labs.get(a.labId)?.organizationId,a.organizationId);assert(domain.safeUrl(a.sourceUrl));assert(a.roleEn&&a.roleZh)}}});
+check('Directory entries have bilingual descriptions and primary sources',()=>{for(const record of [...data.organizations,...data.labs,...data.people]){assert(record.summaryZh&&record.summaryEn);assert(record.sources.length);for(const source of record.sources)assert(domain.safeUrl(source.url))}});
+check('All expanded research lanes and subfields are valid',()=>{assert.equal(new Set(catalog.papers.map(p=>p.lane)).size,8);for(const p of catalog.papers){assert(p.lane in domain.lanes);for(const s of taxonomy.paperSubfields(p))assert(s in taxonomy.subfields,s)}});
+check('Paper summaries and relation evidence have English content',()=>{for(const p of catalog.papers)assert(p.summaryEn?.length>20,p.id);for(const e of catalog.edges)assert(e.labelEn&&e.evidenceEn?.length>20,`${e.source} to ${e.target}`)});
+const dictionary=JSON.parse(await read('lib/translations.json'));
+for(const file of ['app/ui/Atlas.tsx','app/ui/Graph.tsx','app/ui/Modal.tsx']){const source=await read(file);for(const match of source.matchAll(/\bt\(("(?:[^"\\]|\\.)*")/g)){const key=JSON.parse(match[1]);if(/[\u3400-\u9fff]/.test(key))assert(dictionary[key],`${file}: ${key}`)}}
+passed++;console.log('PASS Every static UI translation key is covered');
+console.log(`${passed} expansion checks passed.`);

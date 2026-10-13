@@ -1,0 +1,6 @@
+import { and,eq } from 'drizzle-orm';
+import { getDb } from '../../../db';
+import { bookmarks } from '../../../db/schema';
+import { identity,checkOrigin,error,privateJson,catalog } from '../../../lib/server';
+export async function GET(){const user=await identity();if(!user)return error('请先登录',401);try {const rows=await getDb().select().from(bookmarks).where(eq(bookmarks.userId,user.userId));return privateJson({bookmarks:rows.map(r=>r.paperId)});}catch{return error('暂时无法读取云端收藏',503);}}
+export async function POST(request:Request){if(!checkOrigin(request))return error('请求来源无效',403);const user=await identity();if(!user)return error('请先登录',401);try{const body=await request.json() as {paperId?:string;save?:boolean};if(typeof body.paperId!=='string'||typeof body.save!=='boolean')return error('收藏格式无效');const {papers}=await catalog();if(!papers.some(p=>p.id===body.paperId))return error('论文不存在',404);if(body.save)await getDb().insert(bookmarks).values({userId:user.userId,paperId:body.paperId,createdAt:Date.now()}).onConflictDoNothing();else await getDb().delete(bookmarks).where(and(eq(bookmarks.userId,user.userId),eq(bookmarks.paperId,body.paperId)));return privateJson({ok:true});}catch{return error('收藏未能同步，请重试',503);}}

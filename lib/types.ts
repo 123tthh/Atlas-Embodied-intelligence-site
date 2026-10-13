@@ -1,0 +1,29 @@
+export type Lane = 'policy' | 'vla' | 'data' | 'world' | 'navigation' | 'locomotion' | 'dexterity' | 'simulation';
+export type Recognition = {kind:'best-paper'|'best-paper-finalist'|'best-student-paper'|'oral'|'spotlight'|'highlight'|'award';label:string;venue:string;year:number;sourceUrl:string};
+export type CoverageEntry = {venue:string;year:number;url:string;note:string};
+export type Paper = {
+  ingestion?:'weekly';workKind?:'paper'|'model'|'dataset'|'benchmark';verificationNotes?:{url:string;supports:string}[];
+  id: string; title: string; short: string; year: number; date: string; venue: string;
+  tags: string[]; lane: Lane; project: string; arxiv: string; code: string;
+  organizationIds?:string[]; labIds?:string[]; publicationStatus?:'peer-reviewed'|'preprint'|'technical-release'; recognitions?:Recognition[]; discoverySources?:EvidenceSource[]; verifiedAt?:string; modelUrl?:string; datePrecision?:'day'|'year';
+  authors: { name: string; url?: string }[]; teams: string[]; summary: string; summaryEn?: string; subfields?: string[]; sources: string[];
+};
+export type Edge = { source: string; target: string; type: 'extends' | 'distills' | 'uses' | 'comparable'; label: string; labelEn?: string; evidence: string; evidenceEn?: string; url: string; editorial: boolean };
+export type Catalog = { papers: Paper[]; edges: Edge[]; updated: string; cutoff?:string; coverage?:CoverageEntry[] };
+export type Identity = { displayName: string; isAdmin: boolean } | null;
+export type Proposal = { id: string; title: string; url: string; project: string; keywords: string[]; year: number; lane: Lane; authors: string; relationTo: string; relationType: Edge['type']; evidence: string; evidenceUrl: string; status: string; createdAt: number; reviewNote: string };
+export type EvidenceSource = { label: string; url: string; verifiedAt?: string };
+export type Sector = 'research' | 'humanoid' | 'industrial' | 'logistics' | 'service' | 'medical' | 'autonomy' | 'enabling';
+export type OrganizationLocation = { lat: number; lon: number; cityZh: string; cityEn: string; metroZh?: string; metroEn?: string; metroSourceUrl?: string; regionZh?: string; regionEn?: string; locationType: 'main-campus' | 'campus' | 'headquarters' | 'office'; sourceUrl: string; precision: 'city'; verifiedAt?: string; noteZh?: string; noteEn?: string };
+export type Organization = { id: string; name: string; nameZh: string; aliases?: string[]; parentOrganizationId?: string; sector?: Sector; verifiedAt?: string; regionZh?: string; regionEn?: string; type: 'company' | 'university' | 'institute'; country: string; url: string; summaryZh: string; summaryEn: string; topics: string[]; sources: EvidenceSource[]; location?: OrganizationLocation };
+export type Lab = { id: string; organizationId: string; name: string; nameZh: string; aliases?: string[]; url: string; summaryZh: string; summaryEn: string; topics: string[]; sources: EvidenceSource[] };
+export type CareerStage = 'doctoral'|'masters'|'undergraduate'|'postdoc'|'faculty'|'industry'|'other';
+export type Person = { careerStage?:CareerStage; careerVerifiedAt?:string; researchPaperIds?:string[]; id: string; name: string; nameZh: string; aliases?: string[]; homepage: string; scholar?: string; topics: string[]; summaryZh: string; summaryEn: string; affiliations: { organizationId: string; labId?: string; roleZh: string; roleEn: string; sourceUrl: string }[]; sources: EvidenceSource[] };
+export type ResearchWork = { id: string; title: string; kind: 'model' | 'paper' | 'dataset' | 'benchmark'; date: string; organizationIds: string[]; labIds: string[]; paperUrl?: string; modelUrl?: string; codeUrl?: string; projectUrl?: string; venue?: string; status: 'peer-reviewed' | 'preprint' | 'technical-release'; summaryZh: string; summaryEn: string; signals: ('peer-reviewed' | 'weights' | 'code' | 'data' | 'benchmark')[]; sources: EvidenceSource[]; discoverySources?: EvidenceSource[]; verifiedAt?: string };
+export type Directory = { verifiedAt: string; organizations: Organization[]; labs: Lab[]; people: Person[]; works?: ResearchWork[] };
+export type TeamReview = {
+  lineId:string; status:'approved'|'pending'; category:'academic'|'established-industry'|'emerging-industry'|'institution-portfolio';
+  paperIds:string[]; rationaleZh:string; rationaleEn:string; sources:EvidenceSource[]; checkedAt:string;
+  region:'asia'|'americas'|'europe'|'oceania'|'other'; topics:string[];
+  validationMode?:'model'|'robot'|'mixed'; modelEvaluationSources?:EvidenceSource[]; realRobotSources?:EvidenceSource[]; artifactSources?:EvidenceSource[]; evaluationSources?:EvidenceSource[];
+};

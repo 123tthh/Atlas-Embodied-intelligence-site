@@ -1,0 +1,6 @@
+import { sqliteTable, text, integer, primaryKey, index } from 'drizzle-orm/sqlite-core';
+export const bookmarks=sqliteTable('bookmarks',{userId:text('user_id').notNull(),paperId:text('paper_id').notNull(),createdAt:integer('created_at').notNull()},t=>[primaryKey({columns:[t.userId,t.paperId]})]);
+export const proposals=sqliteTable('proposals',{id:text('id').primaryKey(),userId:text('user_id').notNull(),canonical:text('canonical').notNull().unique(),payload:text('payload').notNull(),status:text('status').notNull().default('pending'),createdAt:integer('created_at').notNull(),reviewNote:text('review_note').notNull().default('')},t=>[index('proposals_user').on(t.userId),index('proposals_status').on(t.status)]);
+export const automaticPapers=sqliteTable('automatic_papers',{id:text('id').primaryKey(),canonical:text('canonical').notNull().unique(),payload:text('payload').notNull(),createdAt:integer('created_at').notNull(),runId:text('run_id').notNull()});
+export const updateRuns=sqliteTable('update_runs',{id:text('id').primaryKey(),fingerprint:text('fingerprint').notNull(),payload:text('payload').notNull(),createdAt:integer('created_at').notNull()});
+export const updateSettings=sqliteTable('update_settings',{key:text('key').primaryKey(),payload:text('payload').notNull()});

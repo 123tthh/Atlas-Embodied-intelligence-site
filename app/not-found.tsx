@@ -1,0 +1,1 @@
+export default function NotFound(){return <main className="not-found"><span className="eyebrow">EMBODIED ATLAS · 404</span><h1>这篇研究尚未收录</h1><p>链接可能有误，或条目还在等待审核。</p><a className="primary" href="/">返回研究地图</a></main>;}

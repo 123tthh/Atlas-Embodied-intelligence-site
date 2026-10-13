@@ -1,0 +1,37 @@
+# 0.99 RC · 2026-10-13
+
+## 图谱交互更新 · 2026-10-13
+
+- 时间画布限制在已有记录的范围，禁止拖出最早年份之前的大块空白；年份跳转同时定位当年的论文。
+- 保留时间图谱，新增可切换分叉树：方向 → 有记录的年份 → 论文 → 研究关联。点击节点展开或收起，较大分支按需分批展开。
+- 分类连线与论文证据关系分开呈现；关联保留原始方向、比较属性和依据入口，循环关系不会反复生成祖先节点。
+- 分叉树支持拖动、缩放、重置、筛选、论文详情与通过页面链接恢复展开状态。
+- 新增 8 项分叉布局及画布边界检查；原有 14 项图谱检查通过。
+
+
+## 已交付
+
+暖白色研究工作台，配合衬线标题、细线分隔和克制的陶土色强调；可缩放、拖动的时间图谱；论文详情抽屉；论文索引与最多三篇对比；研究团队目录；技术关键词检索及中文别名；年份、方向和关系筛选；关系证据弹窗；可分享深链接与筛选视图；本机收藏及 JSON 导入导出；登录后的云端收藏；社区投稿、去重、审核、撤回；arXiv 实时检索与元数据补全；Scholar 及九个会议的检索入口。
+
+当前资料：354 项精选研究，137 条研究关系；包含作者主页、项目与原始论文链接。技术关系与编辑对比显式区分。
+
+## 验证结果
+
+- TypeScript 检查通过，生产构建成功。
+- 11 项领域与目录检查通过。
+- 29 项本机生产接口检查通过，包括两账户收藏隔离、未审核投稿隐藏、非维护者审核拒绝、批准后收录、重复投稿和 404。
+- 浏览器实测：中文技术检索、论文详情、关系依据、双论文对比、收藏刷新后保留、分享后筛选恢复、登录维护者入口、投稿表单、手机图谱与详情布局。
+- arXiv 实时请求成功返回 Diffusion Policy 元数据。
+- 本地模拟器偶尔在提前拒绝的请求后返回“运行器重启”传输错误；测试仅对此明确错误重试一次，不重试应用返回的失败。
+
+## 预发布范围
+
+精选资料覆盖 2016–2026 年，检索截至 2026-10-13，并非完整或实时目录。Scholar 与会议结果由外部检索提供。未进行大规模负载测试。线上真实登录与多账户体验仍需要真实用户试用反馈。
+
+## Weekly research updates and phone graph reading — 2026-10-13
+
+- A cloud-callable authenticated updater adds source-checked papers, models, datasets and reports to D1. New records appear in the catalog, technical graphs and research list without a website deployment. Curated records, technical edges and team approvals remain under separate evidence review.
+- Persistent run history records the search window, checked sources, additions, duplicate skips and failures. Atomic writes and request identifiers make retries safe. Public visitors cannot write through this endpoint.
+- The deployed `/api/updates/instructions` endpoint contains revisioned instructions, source scope, supported credential acquisition, authorization, request format and readback/retry behavior for the linked cloud task. The server-only `ATLAS_UPDATE_TOKEN` runtime secret is provisioned through Sites; no credential is stored in source or the schedule prompt.
+- Phone graph views now use expandable vertical topics/years and readable paper cards. Filters collapse, relation evidence remains accessible, and details open as a bottom panel with keyboard focus handling. The desktop graph and optional free canvas remain available.
+- Validation: TypeScript and production build pass; 22 existing graph/branch checks and 15 local updater integration checks pass. Responsive browser checks cover branch expansion, paper details and filter controls.
