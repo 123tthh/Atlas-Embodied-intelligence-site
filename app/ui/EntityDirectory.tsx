@@ -2,6 +2,7 @@
 import {useEffect,useMemo,useState} from 'react';
 import {ArrowUpRight,ArrowRight,Building2,GraduationCap,Users,FlaskConical,X,Search,Download,Link2} from 'lucide-react';
 import dataJson from '../../lib/directory.json';
+import {BASE_PATH} from '../../lib/site-mode';
 import type {Directory,Person,EvidenceSource} from '../../lib/types';
 import {directoryMatches,organizationSearchValues,personSearchValues,topicZh} from '../../lib/directory';
 import {safeUrl,scholar} from '../../lib/domain';
@@ -25,7 +26,7 @@ function PersonCard({person:p,onAffiliation}:{person:Person;onAffiliation:(org:s
     <div className="person-heading"><div><External url={p.homepage} className="person-name">{bi(p.nameZh||p.name,p.name)}</External>{p.nameZh&&<p>{lang==='zh'?p.name:p.nameZh}</p>}</div><span className="directory-label">{p.careerStage?bi(...careerNames[p.careerStage]):bi('研究人物','Researcher')}</span></div>
     <div className="affiliation-list">{p.affiliations.map((a,i)=>{const org=data.organizations.find(o=>o.id===a.organizationId),lab=data.labs.find(l=>l.id===a.labId);return <div key={i}><button onClick={()=>onAffiliation(a.organizationId,a.labId)}><span>{org&&bi(org.nameZh||org.name,org.name)}</span>{lab&&<><ArrowRight size={11}/><strong>{bi(lab.nameZh||lab.name,lab.name)}</strong></>}</button><p>{bi(a.roleZh,a.roleEn)}<External url={a.sourceUrl}>{bi('归属依据','Affiliation source')}</External></p></div>;})}</div>
     <p className="entity-description">{bi(p.summaryZh,p.summaryEn)}</p><div className="directory-topics">{p.topics.map(topic=><span key={topic}>{bi(topicZh(topic),topic)}</span>)}</div>
-    {representative.length>0&&<section className="person-research"><strong>{bi('代表研究','Selected research')}</strong>{representative.map(w=><a key={w.id} href={`/paper/${w.id}?lang=${lang}`}><span>{w.short}</span><small>{w.venue} · {w.year}</small><ArrowUpRight size={12}/></a>)}</section>}{p.careerVerifiedAt&&<small className="person-career-date">{bi('研究阶段核验','Career stage checked')} {p.careerVerifiedAt} · {bi('身份可能随时间变化','Roles may change')}</small>}<div className="person-links"><External url={p.homepage}>{bi('个人主页 / 官方介绍','Homepage / official profile')}</External><External url={p.scholar||scholar('author:"'+p.name+'"')}>{p.scholar?'Scholar':bi('Scholar 检索','Scholar search')}</External></div><Sources sources={p.sources}/>
+    {representative.length>0&&<section className="person-research"><strong>{bi('代表研究','Selected research')}</strong>{representative.map(w=><a key={w.id} href={`${BASE_PATH}?view=graph&paper=${encodeURIComponent(w.id)}&lang=${lang}`}><span>{w.short}</span><small>{w.venue} · {w.year}</small><ArrowUpRight size={12}/></a>)}</section>}{p.careerVerifiedAt&&<small className="person-career-date">{bi('研究阶段核验','Career stage checked')} {p.careerVerifiedAt} · {bi('身份可能随时间变化','Roles may change')}</small>}<div className="person-links"><External url={p.homepage}>{bi('个人主页 / 官方介绍','Homepage / official profile')}</External><External url={p.scholar||scholar('author:"'+p.name+'"')}>{p.scholar?'Scholar':bi('Scholar 检索','Scholar search')}</External></div><Sources sources={p.sources}/>
   </article>;
 }
 export default function EntityDirectory({mode,query,onQuery}:{mode:'organizations'|'people';query:string;onQuery:(value:string)=>void}){

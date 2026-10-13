@@ -13,7 +13,7 @@ const aliases = [ ['diffusion','扩散'], ['vla','vision language action','视�
 export function normalize(text: string) { return text.toLowerCase().normalize('NFKC').replace(/[\-_·]/g,' ').replace(/\s+/g,' ').trim(); }
 export function searchPapers(papers: Paper[], query: string) {
   const terms = normalize(query).split(' ').filter(Boolean);
-  return papers.filter(p => { let text = normalize([p.short,p.title,...p.tags,lanes[p.lane].name,lanes[p.lane].english,...(p.subfields||[]),...p.teams,...p.authors.map(a=>a.name)].join(' '));for (const group of aliases) if (group.some(alias => text.includes(alias))) text += ' '+group.join(' ');return terms.every(term => text.includes(term)); });
+  return papers.filter(p => { let text = normalize([p.short,p.title,p.arxiv,p.venue,...p.tags,lanes[p.lane].name,lanes[p.lane].english,...(p.subfields||[]),...p.teams,...p.authors.flatMap(a=>[a.name,a.nameZh||''])].join(' '));for (const group of aliases) if (group.some(alias => text.includes(alias))) text += ' '+group.join(' ');return terms.every(term => text.includes(term)); });
 }
 export function arxivId(value: string): string | null {
   const trimmed=value.trim();if (/^\d{4}\.\d{4,5}(v\d+)?$/.test(trimmed)) return trimmed.replace(/v\d+$/,'');

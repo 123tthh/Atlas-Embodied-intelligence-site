@@ -6,7 +6,7 @@ export type Paper = {
   id: string; title: string; short: string; year: number; date: string; venue: string;
   tags: string[]; lane: Lane; project: string; arxiv: string; code: string;
   organizationIds?:string[]; labIds?:string[]; publicationStatus?:'peer-reviewed'|'preprint'|'technical-release'; recognitions?:Recognition[]; discoverySources?:EvidenceSource[]; verifiedAt?:string; modelUrl?:string; datePrecision?:'day'|'year';
-  authors: { name: string; url?: string }[]; teams: string[]; summary: string; summaryEn?: string; subfields?: string[]; sources: string[];
+  authors: { name: string; nameZh?: string; url?: string }[]; teams: string[]; summary: string; summaryEn?: string; subfields?: string[]; sources: string[];
 };
 export type Edge = { source: string; target: string; type: 'extends' | 'distills' | 'uses' | 'comparable'; label: string; labelEn?: string; evidence: string; evidenceEn?: string; url: string; editorial: boolean };
 export type Catalog = { papers: Paper[]; edges: Edge[]; updated: string; cutoff?:string; coverage?:CoverageEntry[] };

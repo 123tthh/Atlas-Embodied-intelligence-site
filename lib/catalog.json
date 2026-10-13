@@ -22662,6 +22662,86 @@
       ],
       "verifiedAt": "2026-10-13",
       "datePrecision": "day"
+    },
+    {
+      "id": "echo-in-the-steps",
+      "title": "Echo in the Steps: Learning Perceptive Humanoid Parkour with Gated Memory",
+      "short": "Echo in the Steps",
+      "year": 2026,
+      "date": "2026-09-24",
+      "venue": "CoRL 2026",
+      "lane": "locomotion",
+      "tags": [
+        "Humanoid Parkour",
+        "Visual Control",
+        "Gated Memory",
+        "Reinforcement Learning",
+        "Sim-to-Real"
+      ],
+      "authors": [
+        {
+          "name": "Ming-Ju Lee",
+          "nameZh": "李旻儒"
+        },
+        {
+          "name": "Zizhuo Wang"
+        },
+        {
+          "name": "Shaoting Zhu",
+          "url": "https://shaotingzhu.github.io/"
+        },
+        {
+          "name": "Haozhe Lou",
+          "url": "https://haozhelou.com/"
+        },
+        {
+          "name": "Hang Zhao",
+          "url": "https://hangzhaomit.github.io/"
+        },
+        {
+          "name": "Yiming Li",
+          "nameZh": "李一鸣",
+          "url": "https://yimingli-page.github.io/"
+        }
+      ],
+      "organizationIds": [
+        "tsinghua"
+      ],
+      "labIds": [],
+      "teams": [
+        "Tsinghua University",
+        "清华大学"
+      ],
+      "project": "https://echo-in-the-steps.github.io/",
+      "arxiv": "https://arxiv.org/abs/2609.28960",
+      "code": "",
+      "modelUrl": "",
+      "summary": "利用显著性先验、时序门控记忆和交替步态正则，从机载深度观测学习稀疏落脚点上的人形跑酷；在 Unitree G1 上验证。官方项目页标注 CoRL 2026，代码尚待发布。",
+      "summaryEn": "Combines saliency-guided depth features, temporal gated memory and alternating-step regularization for humanoid parkour over sparse footholds, with real-world Unitree G1 validation. The official project lists CoRL 2026; code is coming soon.",
+      "sources": [
+        "https://arxiv.org/abs/2609.28960",
+        "https://arxiv.org/html/2609.28960v1",
+        "https://echo-in-the-steps.github.io/"
+      ],
+      "publicationStatus": "peer-reviewed",
+      "recognitions": [],
+      "verifiedAt": "2026-10-13",
+      "datePrecision": "day",
+      "subfields": [
+        "legged-locomotion",
+        "reinforcement-learning",
+        "sim-to-real"
+      ],
+      "verificationNotes": [
+        {
+          "url": "https://echo-in-the-steps.github.io/",
+          "supports": "Official project lists CoRL 2026, equal contribution by Ming-Ju Lee and Zizhuo Wang, corresponding authors Hang Zhao and Yiming Li, Tsinghua affiliation, and Code — coming soon."
+        },
+        {
+          "url": "https://arxiv.org/html/2609.28960v1",
+          "supports": "Paper confirms the depth-based framework, Isaac Lab training and Unitree G1 experiments. The paper credits Tsinghua University; it does not list Litchi Lab as an affiliation."
+        }
+      ]
     }
   ],
   "edges": [

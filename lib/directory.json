@@ -7264,12 +7264,14 @@
       "type": "company",
       "sector": "research",
       "url": "https://www.litchibot.com/",
-      "summaryZh": "北京厘清智能科技有限公司，面向具身世界模型与 Physical AI 数据基础设施；创始人为李一鸣。官网现公开 T1 数采设备，尚未核实足够公司署名模型成果与正式评测。",
-      "summaryEn": "Beijing-based Physical AI and embodied world-model company founded by Yiming Li. Its official site presents T1 data-capture products; sufficient company-attributed model outputs and formal evaluations remain unverified.",
+      "summaryZh": "北京厘清智能科技有限公司（Litchi Lab），由清华大学李一鸣创立，面向 Physical AI、跨本体智能与具身数据基础设施。官网展示 T1 数采手套和 Ego 数采设备；公司署名研究成果仍待补齐核验。",
+      "summaryEn": "Beijing Litchi Lab, founded by Tsinghua University’s Yiming Li, develops Physical AI, cross-embodiment intelligence and embodied-data infrastructure. Its official site presents T1 capture gloves and Ego capture devices; company-attributed research evidence remains under review.",
       "topics": [
         "Physical AI",
         "World models",
-        "Embodied data"
+        "Embodied data",
+        "Cross-embodiment",
+        "Teleoperation"
       ],
       "sources": [
         {
@@ -7292,7 +7294,9 @@
       "aliases": [
         "北京厘清智能科技有限公司",
         "厘清",
-        "Litchi"
+        "Litchi",
+        "Litchi Lab",
+        "厘清智能科技"
       ],
       "location": {
         "lat": 39.9,
@@ -14497,10 +14501,12 @@
       "topics": [
         "Spatial intelligence",
         "Physical AI",
-        "World models"
+        "World models",
+        "Humanoids",
+        "Locomotion"
       ],
-      "summaryZh": "清华大学人工智能学院助理教授、厘清智能创始人。按院系主页与合作方公告核实身份；个人成立公司前的论文不自动计为公司成果。",
-      "summaryEn": "Assistant Professor at Tsinghua University and founder of Litchi Lab. Institutional and partner sources establish identity; earlier personal research is not automatically attributed to the company.",
+      "summaryZh": "清华大学人工智能学院助理教授、厘清智能创始人，研究空间智能、世界模型与机器人。《Echo in the Steps》（CoRL 2026）通讯作者之一；该论文署名单位为清华大学。",
+      "summaryEn": "Assistant Professor in Tsinghua University’s College of AI and founder of Litchi Lab, studying spatial intelligence, world models and robotics. A corresponding author of Echo in the Steps (CoRL 2026), which is affiliated with Tsinghua University.",
       "affiliations": [
         {
           "organizationId": "tsinghua",
@@ -14530,7 +14536,24 @@
           "label": "Event interview identifying Chinese name / 活动访谈姓名核对",
           "url": "https://www.shobserver.cn/sgh/detail?id=4058031",
           "verifiedAt": "2026-10-13"
+        },
+        {
+          "label": "Official homepage / 个人主页",
+          "url": "https://yimingli-page.github.io/",
+          "verifiedAt": "2026-10-13"
+        },
+        {
+          "label": "Echo in the Steps: corresponding authors / 通讯作者与论文归属",
+          "url": "https://echo-in-the-steps.github.io/",
+          "verifiedAt": "2026-10-13"
         }
+      ],
+      "researchPaperIds": [
+        "echo-in-the-steps"
+      ],
+      "aliases": [
+        "Li Yiming",
+        "清华李一鸣"
       ]
     },
     {
@@ -15143,6 +15166,49 @@
         {
           "label": "Primary research evidence / 原始研究依据",
           "url": "https://www.robot-learning.uk/team",
+          "verifiedAt": "2026-10-13"
+        }
+      ]
+    },
+    {
+      "id": "ming-ju-lee",
+      "name": "Ming-Ju Lee",
+      "nameZh": "李旻儒",
+      "aliases": [
+        "Ming Ju Lee",
+        "Mingju Lee",
+        "Lee Ming Ju"
+      ],
+      "homepage": "https://echo-in-the-steps.github.io/",
+      "topics": [
+        "Humanoids",
+        "Locomotion",
+        "Memory",
+        "Reinforcement learning",
+        "Sim-to-real"
+      ],
+      "summaryZh": "《Echo in the Steps》（CoRL 2026）共同第一作者，论文署名单位为清华大学；研究机载深度感知、门控记忆与人形机器人跑酷。中文名按本次目录补充登记。",
+      "summaryEn": "Co-first author of Echo in the Steps (CoRL 2026), affiliated with Tsinghua University in the paper. Research covers onboard depth perception, gated memory and humanoid parkour. The Chinese name was supplied in this directory update.",
+      "researchPaperIds": [
+        "echo-in-the-steps"
+      ],
+      "affiliations": [
+        {
+          "organizationId": "tsinghua",
+          "roleZh": "论文署名作者、共同第一作者",
+          "roleEn": "Paper affiliation; co-first author",
+          "sourceUrl": "https://echo-in-the-steps.github.io/"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Official project: authors, contribution and affiliation / 作者、贡献与单位",
+          "url": "https://echo-in-the-steps.github.io/",
+          "verifiedAt": "2026-10-13"
+        },
+        {
+          "label": "arXiv author record / arXiv 作者记录",
+          "url": "https://arxiv.org/abs/2609.28960",
           "verifiedAt": "2026-10-13"
         }
       ]
@@ -30795,6 +30861,38 @@
       "summaryEn": "Connects assets, demonstration collection, training and evaluation in Newton for 22 tasks. The report explicitly separates simulation-stack consistency from agreement with physical hardware.",
       "verifiedAt": "2026-10-13",
       "projectUrl": "https://lightwheel.ai/media/lightwheel-launches-robofinals-full-stack-robot-evaluation-benchmark-newton"
+    },
+    {
+      "id": "echo-in-the-steps",
+      "title": "Echo in the Steps: Learning Perceptive Humanoid Parkour with Gated Memory",
+      "kind": "paper",
+      "date": "2026-09-24",
+      "organizationIds": [
+        "tsinghua"
+      ],
+      "labIds": [],
+      "paperUrl": "https://arxiv.org/abs/2609.28960",
+      "projectUrl": "https://echo-in-the-steps.github.io/",
+      "venue": "CoRL 2026",
+      "status": "peer-reviewed",
+      "summaryZh": "利用显著性先验、时序门控记忆和交替步态正则，从机载深度观测学习稀疏落脚点上的人形跑酷；在 Unitree G1 上验证。官方项目页标注 CoRL 2026，代码尚待发布。",
+      "summaryEn": "Combines saliency-guided depth features, temporal gated memory and alternating-step regularization for humanoid parkour over sparse footholds, with real-world Unitree G1 validation. The official project lists CoRL 2026; code is coming soon.",
+      "signals": [
+        "peer-reviewed"
+      ],
+      "sources": [
+        {
+          "label": "arXiv paper / 原始论文",
+          "url": "https://arxiv.org/abs/2609.28960",
+          "verifiedAt": "2026-10-13"
+        },
+        {
+          "label": "Project: CoRL 2026 and release status / 项目与发布状态",
+          "url": "https://echo-in-the-steps.github.io/",
+          "verifiedAt": "2026-10-13"
+        }
+      ],
+      "verifiedAt": "2026-10-13"
     }
   ]
 }

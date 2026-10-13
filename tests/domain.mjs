@@ -9,6 +9,7 @@ let passed=0;
 const check=(name,fn)=>{fn();passed++;console.log('PASS '+name)};
 check('Chinese technology query finds diffusion papers',()=>assert(d.searchPapers(catalog.papers,'扩散').some(p=>p.id==='dp')));
 check('Multiple terms narrow the query',()=>{const result=d.searchPapers(catalog.papers,'diffusion point cloud');assert(result.some(p=>p.id==='dp3'));assert(!result.some(p=>p.id==='dp'));});
+check('Paper identifiers and registered Chinese author names are searchable',()=>{for(const query of ['2609.28960','李旻儒','李一鸣 CoRL','Ming-Ju Lee'])assert(d.searchPapers(catalog.papers,query).some(p=>p.id==='echo-in-the-steps'),query);assert.equal(d.searchPapers(catalog.papers,'2609.28960').length,1);});
 check('NFKC and case normalization',()=>assert.equal(d.normalize(' ＶＬＡ__Model '),'vla model'));
 check('arXiv versions and PDF links canonicalize together',()=>{assert.equal(d.arxivId('https://arxiv.org/pdf/2303.04137v5.pdf'),'2303.04137');assert.equal(d.canonicalUrl('2303.04137v2'),'https://arxiv.org/abs/2303.04137')});
 check('Reject lookalike arXiv domains and unsafe URLs',()=>{assert.equal(d.arxivId('https://arxiv.org.evil.example/abs/2303.04137'),null);assert.equal(d.safeUrl('javascript:alert(1)'),'');assert.equal(d.safeUrl('https://user:pass@example.org'),'')});
