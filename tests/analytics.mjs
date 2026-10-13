@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import ts from 'typescript';
+const source=await readFile(new URL('../lib/analytics.ts',import.meta.url),'utf8');
+const code=ts.transpile(source,{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ES2022});
+const {beijingDay,analyticsDays,knownBot}=await import('data:text/javascript;base64,'+Buffer.from(code).toString('base64'));
+assert.equal(beijingDay(Date.parse('2026-10-13T15:59:59Z')),'2026-10-13');
+assert.equal(beijingDay(Date.parse('2026-10-13T16:00:00Z')),'2026-10-14');
+assert.deepEqual(analyticsDays(3,Date.parse('2026-03-01T02:00:00Z')),['2026-02-27','2026-02-28','2026-03-01']);
+assert.deepEqual(analyticsDays(3,Date.parse('2024-03-01T02:00:00Z')),['2024-02-28','2024-02-29','2024-03-01']);
+assert.equal(analyticsDays(90,Date.parse('2026-01-01T02:00:00Z')).length,90);
+console.log('PASS Beijing day boundaries, leap years and complete zero-fill date ranges');
+for(const ua of ['Googlebot/2.1','facebookexternalhit preview','HeadlessChrome/140','curl/8','python-requests/2.0'])assert(knownBot(ua),ua);
+assert(!knownBot('Mozilla/5.0 Chrome/140.0.0.0 Safari/537.36'));
+console.log('PASS known automation is filtered without excluding ordinary browser user agents');

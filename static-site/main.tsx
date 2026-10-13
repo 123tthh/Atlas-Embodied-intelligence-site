@@ -4,5 +4,6 @@ import '../app/globals.css';
 import '../app/directory.css';
 import '../app/world-map.css';
 import '../app/regional.css';
+import '../app/analytics.css';
 
 createRoot(document.getElementById('root')!).render(<Atlas user={null} />);
