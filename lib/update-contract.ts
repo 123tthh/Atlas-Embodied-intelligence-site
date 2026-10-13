@@ -10,7 +10,7 @@ export const updatePaper=z.object({
  lane:z.enum(['policy','vla','data','world','navigation','locomotion','dexterity','simulation']),
  venue:z.string().max(150),publicationStatus:z.enum(['peer-reviewed','preprint','technical-release']),
  tags:z.array(z.string().min(1).max(60)).min(1).max(12),
- authors:z.array(z.object({name:z.string().min(1).max(150)})).min(1).max(100),
+ authors:z.array(z.object({name:z.string().min(1).max(150)})).min(1).max(500),
  summary:z.string().min(30).max(3000),summaryEn:z.string().max(3000).optional(),
  arxiv:optionalUrl,project:optionalUrl,code:optionalUrl,modelUrl:optionalUrl,
  sources:z.array(url).min(1).max(8),

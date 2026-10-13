@@ -47,6 +47,14 @@ try:
  check('catalog persisted and curated edges preserved',request('/api/catalog'),200,lambda x:len(x['papers'])==size+1 and x['edges']==edges and any(p['id']==pid and p['ingestion']=='weekly' and p['verificationNotes'] for p in x['papers']))
  check('run history persists both unique runs',request(),200,lambda x:len([r for r in x['runs'] if r['runId'].startswith(key)])==2)
  check('instructions retrievable', (urllib.request.urlopen(BASE+'/api/updates/instructions').status,True),200)
+ full=copy.deepcopy(batch);full['runId']=key+'-full-byline';full['papers'][0]['title']='Complete author byline '+key
+ full['papers'][0]['sources']=['https://example.invalid/'+key+'-full'];full['papers'][0]['checks'][0]['url']=full['papers'][0]['sources'][0]
+ full['papers'][0]['authors']=[{'name':'Local Author '+str(i)} for i in range(501)]
+ check('oversized author byline rejected without truncating',request(payload=full),400)
+ full['papers'][0]['authors']=full['papers'][0]['authors'][:300]
+ complete=request(payload=full);check('large collaboration author byline imported',complete,200,lambda x:len(x['added'])==1)
+ full_id=complete[1]['added'][0]['id']
+ check('all 300 authors persist in source order',request('/api/catalog'),200,lambda x:next(p for p in x['papers'] if p['id']==full_id)['authors']==full['papers'][0]['authors'])
  print(str(passed)+' updater integration checks passed.')
 finally:
  for filename in pathlib.Path('.wrangler/state').rglob('*.sqlite'):

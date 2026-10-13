@@ -15,7 +15,7 @@ export const researcherKey=(name:string)=>name.normalize('NFKD').replace(/[\u030
 export const collaborationKey=(a:string,b:string)=>JSON.stringify([a,b].sort());
 const cleanName=(name:string)=>name.replace(/[\*†‡§]+/g,'').trim();
 const urlKey=(value:string)=>{try{const u=new URL(value);return /https?:/.test(u.protocol)?u.host.toLowerCase()+u.pathname.replace(/\/$/,''):'';}catch{return '';}};
-const collective=(name:string)=>/\b(team|contributors?|consortium|collaboration|research|robotics|nvidia|openai|deepmind|et\s*al)\b/i.test(name)||!name.trim();
+const collective=(name:string)=>/\b(team|contributors?|consortium|collaboration|research|robotics|nvidia|openai|deepmind|et\s*al)\b/i.test(name)||/^physical intelligence$/i.test(name)||!/\p{L}/u.test(name);
 const fullName=(name:string)=>/^[\p{Script=Han}]{2,6}$/u.test(name)||name.split(/[\s-]+/).filter(Boolean).length>1&&!name.split(/[\s-]+/).some(part=>/^[A-Za-z]\.?$/.test(part));
 
 /** A name match is a catalog identity, never evidence of friendship or mentorship. */

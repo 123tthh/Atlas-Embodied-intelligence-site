@@ -2,6 +2,7 @@ export type Lane = 'policy' | 'vla' | 'data' | 'world' | 'navigation' | 'locomot
 export type Recognition = {kind:'best-paper'|'best-paper-finalist'|'best-student-paper'|'oral'|'spotlight'|'highlight'|'award';label:string;venue:string;year:number;sourceUrl:string};
 export type CoverageEntry = {venue:string;year:number;url:string;note:string};
 export type Paper = {
+  authorList?:{complete:boolean;source:string;checkedAt:string};
   ingestion?:'weekly';workKind?:'paper'|'model'|'dataset'|'benchmark';verificationNotes?:{url:string;supports:string}[];
   id: string; title: string; short: string; year: number; date: string; venue: string;
   tags: string[]; lane: Lane; project: string; arxiv: string; code: string;

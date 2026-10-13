@@ -312,5 +312,6 @@
   "留个邮箱与建议，一起完善这张研究地图。": "Leave your email and a suggestion to help improve this atlas.",
   "访客收藏保存在当前浏览器，可导入导出；登录收藏保存在云端。社区留言无需账号与密码，邮箱和建议仅维护者可见；结构化论文投稿可选择登录后提交并跟踪审核。只有维护者能批准发布。站外检索由目标网站提供，本站不会自动抓取 Google Scholar。": "Guest bookmarks stay in your browser and can be imported or exported. Signed-in bookmarks are stored in the cloud. The community inbox needs no account or password, and only maintainers can read emails and suggestions. Structured research submissions and review tracking are optional signed-in tools. Only maintainers can approve publication. External searches are provided by their respective websites; this site does not crawl Google Scholar.",
   "人物关系网": "People network",
-  "沿共同署名的论文，探索研究者的合作圈与最短连接。": "Explore coauthor circles and shortest connections through shared papers."
+  "沿共同署名的论文，探索研究者的合作圈与最短连接。": "Explore coauthor circles and shortest connections through shared papers.",
+  "实线代表有来源的方法扩展、蒸馏或资源使用；虚线是编辑推荐的同类比较。点击连线可检查证据。论文作者尽量保留原始完整署名，未核实项可能仍不完整；署名机构保留发表时信息；机构与人物目录另行核验当前公开归属，并提供官方依据。": "Solid links cite documented method extensions, distillation or resource use; dashed links are editorial comparisons. Click a link to inspect the evidence. Full author bylines are retained where verified, while unverified lists may remain incomplete. Paper affiliations reflect the time of publication; current organization and researcher profiles are checked separately against official sources."
 }

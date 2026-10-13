@@ -122,3 +122,5 @@
 
 .rn-optional-label{opacity:0}.rn-node:hover .rn-optional-label,.rn-node:focus .rn-optional-label{opacity:1}
 @media(max-width:680px){.rn-canvas{height:440px}}
+
+.rn-idle circle{fill:#d4d4d4;stroke:#bababa;stroke-width:1.5}.rn-idle text{fill:var(--muted);font:14px var(--sans)}.rn-idle .rn-idle-hint{font-size:11px}.rn-selection-hint{color:var(--muted)}.rn-selection-hint h3{font-size:22px;color:var(--text)}.rn-selection-hint p{font-size:12px;line-height:1.9}.rn-disclaimer{margin-top:18px;border-top:1px solid var(--line);padding-top:15px;color:var(--muted);font-size:11px;line-height:1.9;overflow-wrap:anywhere}
