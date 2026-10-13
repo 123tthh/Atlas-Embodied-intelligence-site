@@ -18,6 +18,18 @@ check('Layouts remain finite and deterministic for a large neighborhood',()=>{co
 const catalog=JSON.parse(await readFile(new URL('../lib/catalog.json',import.meta.url),'utf8'));
 const directory=JSON.parse(await readFile(new URL('../lib/directory.json',import.meta.url),'utf8'));
 const actual=build(catalog.papers,directory.people);
+check('Global researcher circles and cross-team coauthorship are discoverable with source evidence',()=>{
+  for(const id of ['sergey-levine','chelsea-finn','marco-hutter','dieter-fox','pieter-abbeel','jemin-hwangbo','author:danijarhafner']){
+    const n=actual.nodeById.get(id);assert(n?.paperIds.length,id);assert(actual.adjacency.get(id)?.size,id);
+    assert.equal(lib.searchResearchers(actual,n.name)[0]?.id,id);
+  }
+  const shared=actual.edgeById.get(key('sergey-levine','chelsea-finn'));
+  for(const id of ['robonet','act','octo','openvla','bridgev2'])assert(shared.paperIds.includes(id),id);
+  assert(actual.edgeById.get(key('russ-tedrake','shuran-song')).paperIds.includes('dp'));
+  assert(actual.edgeById.get(key('pieter-abbeel','author:danijarhafner')).paperIds.includes('daydreamer'));
+  assert.deepEqual(path(actual,'sergey-levine','russ-tedrake'),['sergey-levine','russ-tedrake']);
+  assert(!actual.nodes.some(n=>n.name==='Octo Model Team'));
+});
 check('Shaoting Zhu connects to named Hiking and Echo coauthors with source papers',()=>{const n=actual.nodeById.get('shaoting-zhu');assert.equal(n.nameZh,'朱少廷');assert(n.paperIds.includes('hiking-in-the-wild'));const route=path(actual,'shaoting-zhu','ming-ju-lee');assert.deepEqual(route,['shaoting-zhu','ming-ju-lee']);assert(actual.edgeById.get(key(...route)).paperIds.includes('echo-in-the-steps'));assert.equal(actual.nodes.filter(n=>n.name==='Shaoting Zhu').length,1);assert.deepEqual(path(actual,'shaoting-zhu','yitang-li'),['shaoting-zhu','yitang-li']);assert(actual.edgeById.get(key('shaoting-zhu','yitang-li')).paperIds.includes('omg-humanoid'))});
 check('Every displayed relationship has two author records and resolvable paper evidence',()=>{for(const e of actual.edges){assert(e.paperIds.length>0);assert.notEqual(e.source,e.target);for(const id of e.paperIds){assert(actual.papers.has(id));assert(actual.nodeById.get(e.source).paperIds.includes(id));assert(actual.nodeById.get(e.target).paperIds.includes(id))}}});
 console.log(`${count} researcher-network checks passed.`);

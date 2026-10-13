@@ -1,7 +1,7 @@
 'use client';
 import {useEffect, useRef, useState} from 'react';
 import {ANALYTICS_EVENT, ANALYTICS_ID, ANALYTICS_OPTOUT} from '../../lib/analytics';
-import {publicApi} from '../../lib/site-mode';
+import {publicApi,signInUrl,STATIC_MODE} from '../../lib/site-mode';
 import {useI18n} from './Language';
 
 function browserPrivacy() {
@@ -57,5 +57,5 @@ export function VisitPrivacy() {
       setOff(next); window.dispatchEvent(new Event(ANALYTICS_EVENT));
     } catch { setAvailable(false); }
   }
-  return <section className="visit-privacy"><div><strong>{bi('匿名访问统计','Anonymous visit statistics')}</strong><p>{bi('使用此浏览器保存的随机标识估算访客量，仅维护者可查看汇总。不记录姓名、邮箱、搜索内容或原始 IP，不追踪其他网站。','A random identifier saved in this browser estimates visitor counts. Only maintainers can view aggregate statistics. We do not record names, emails, searches or raw IP addresses, or track other websites.')}</p><small>{bi(forced ? '已遵循浏览器的“不跟踪”或隐私信号，停止统计。' : off ? '此浏览器已关闭统计。' : '你可随时关闭此浏览器的统计。', forced ? 'Tracking is disabled by your browser privacy signal.' : off ? 'Statistics are disabled in this browser.' : 'You can disable statistics in this browser at any time.')}</small></div><button className="secondary" onClick={toggle} disabled={!available || forced} aria-pressed={off}>{bi(off ? '开启本浏览器统计' : '关闭本浏览器统计', off ? 'Enable statistics here' : 'Disable statistics here')}</button></section>;
+  return <section className="visit-privacy"><div><strong>{bi('匿名访问统计','Anonymous visit statistics')}</strong><p>{bi('使用此浏览器保存的随机标识估算访客量，仅维护者可查看汇总。不记录姓名、邮箱、搜索内容或原始 IP，不追踪其他网站。','A random identifier saved in this browser estimates visitor counts. Only maintainers can view aggregate statistics. We do not record names, emails, searches or raw IP addresses, or track other websites.')}</p><small>{bi(forced ? '已遵循浏览器的“不跟踪”或隐私信号，停止统计。' : off ? '此浏览器已关闭统计。' : '你可随时关闭此浏览器的统计。', forced ? 'Tracking is disabled by your browser privacy signal.' : off ? 'Statistics are disabled in this browser.' : 'You can disable statistics in this browser at any time.')}</small>{STATIC_MODE&&<p><a className="text-link" href={signInUrl('/?view=data')}>{bi('维护者登录查看两个站点的访问统计 →','Maintainer sign-in: view statistics for both websites →')}</a></p>}</div><button className="secondary" onClick={toggle} disabled={!available || forced} aria-pressed={off}>{bi(off ? '开启本浏览器统计' : '关闭本浏览器统计', off ? 'Enable statistics here' : 'Disable statistics here')}</button></section>;
 }

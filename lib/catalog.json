@@ -142,8 +142,32 @@
           "url": ""
         },
         {
+          "name": "Stephen Tian"
+        },
+        {
+          "name": "Suraj Nair",
+          "url": "https://suraj-nair-1.github.io/"
+        },
+        {
+          "name": "Bernadette Bucher"
+        },
+        {
+          "name": "Karl Schmeckpeper"
+        },
+        {
+          "name": "Siddharth Singh"
+        },
+        {
+          "name": "Sergey Levine",
+          "personId": "sergey-levine",
+          "url": "https://www2.eecs.berkeley.edu/Faculty/Homepages/svlevine.html",
+          "nameZh": "Sergey Levine"
+        },
+        {
           "name": "Chelsea Finn",
-          "url": "https://ai.stanford.edu/~cbfinn/"
+          "url": "https://ai.stanford.edu/~cbfinn/",
+          "personId": "chelsea-finn",
+          "nameZh": "Chelsea Finn"
         }
       ],
       "teams": [
@@ -171,7 +195,13 @@
       "publicationStatus": "peer-reviewed",
       "verifiedAt": "2026-10-13",
       "datePrecision": "day",
-      "subfields": []
+      "subfields": [],
+      "verificationNotes": [
+        {
+          "url": "https://arxiv.org/abs/1910.11215",
+          "supports": "Complete author byline checked against the original arXiv record on 2026-10-13; collective team bylines are excluded from personal coauthorship links."
+        }
+      ]
     },
     {
       "id": "sapien",
@@ -1341,12 +1371,34 @@
           "url": "https://cheng-chi.github.io/"
         },
         {
+          "name": "Zhenjia Xu",
+          "url": "https://zhenjiaxu.com/"
+        },
+        {
           "name": "Siyuan Feng",
           "url": "https://www.cs.cmu.edu/~sfeng/"
         },
         {
+          "name": "Eric Cousineau"
+        },
+        {
           "name": "Yilun Du",
           "url": "https://yilundu.github.io/"
+        },
+        {
+          "name": "Benjamin Burchfiel"
+        },
+        {
+          "name": "Russ Tedrake",
+          "personId": "russ-tedrake",
+          "url": "https://locomotion.csail.mit.edu/russt.html",
+          "nameZh": "Russ Tedrake"
+        },
+        {
+          "name": "Shuran Song",
+          "personId": "shuran-song",
+          "url": "https://shurans.github.io/",
+          "nameZh": "宋舒然"
         }
       ],
       "teams": [
@@ -1371,7 +1423,13 @@
       "publicationStatus": "peer-reviewed",
       "verifiedAt": "2026-10-13",
       "datePrecision": "day",
-      "subfields": []
+      "subfields": [],
+      "verificationNotes": [
+        {
+          "url": "https://arxiv.org/abs/2303.04137",
+          "supports": "Complete author byline checked against the original arXiv record on 2026-10-13; collective team bylines are excluded from personal coauthorship links."
+        }
+      ]
     },
     {
       "id": "act",
@@ -1400,8 +1458,16 @@
           "url": "https://vikashplus.github.io/"
         },
         {
+          "name": "Sergey Levine",
+          "personId": "sergey-levine",
+          "url": "https://www2.eecs.berkeley.edu/Faculty/Homepages/svlevine.html",
+          "nameZh": "Sergey Levine"
+        },
+        {
           "name": "Chelsea Finn",
-          "url": "https://ai.stanford.edu/~cbfinn/"
+          "url": "https://ai.stanford.edu/~cbfinn/",
+          "personId": "chelsea-finn",
+          "nameZh": "Chelsea Finn"
         }
       ],
       "teams": [
@@ -1425,7 +1491,13 @@
       "publicationStatus": "peer-reviewed",
       "verifiedAt": "2026-10-13",
       "datePrecision": "day",
-      "subfields": []
+      "subfields": [],
+      "verificationNotes": [
+        {
+          "url": "https://arxiv.org/abs/2304.13705",
+          "supports": "Complete author byline checked against the original arXiv record on 2026-10-13; collective team bylines are excluded from personal coauthorship links."
+        }
+      ]
     },
     {
       "id": "soccer-rl",
@@ -1646,8 +1718,19 @@
           "url": "https://people.csail.mit.edu/jiex/"
         },
         {
+          "name": "Yijie Guo"
+        },
+        {
+          "name": "Valts Blukis"
+        },
+        {
+          "name": "Yu-Wei Chao"
+        },
+        {
           "name": "Dieter Fox",
-          "url": "https://homes.cs.washington.edu/~fox/"
+          "url": "https://homes.cs.washington.edu/~fox/",
+          "personId": "dieter-fox",
+          "nameZh": "Dieter Fox"
         }
       ],
       "teams": [
@@ -1667,7 +1750,13 @@
       "publicationStatus": "peer-reviewed",
       "verifiedAt": "2026-10-13",
       "datePrecision": "day",
-      "subfields": []
+      "subfields": [],
+      "verificationNotes": [
+        {
+          "url": "https://arxiv.org/abs/2306.14896",
+          "supports": "Complete author byline checked against the original arXiv record on 2026-10-13; collective team bylines are excluded from personal coauthorship links."
+        }
+      ]
     },
     {
       "id": "vint",
@@ -1882,8 +1971,47 @@
           "url": ""
         },
         {
+          "name": "Abraham Lee"
+        },
+        {
           "name": "Moo Jin Kim",
           "url": "https://moojink.com/"
+        },
+        {
+          "name": "Max Du"
+        },
+        {
+          "name": "Chongyi Zheng"
+        },
+        {
+          "name": "Tony Zhao"
+        },
+        {
+          "name": "Philippe Hansen-Estruch"
+        },
+        {
+          "name": "Quan Vuong"
+        },
+        {
+          "name": "Andre He"
+        },
+        {
+          "name": "Vivek Myers"
+        },
+        {
+          "name": "Kuan Fang"
+        },
+        {
+          "name": "Chelsea Finn",
+          "url": "https://ai.stanford.edu/~cbfinn/",
+          "personId": "chelsea-finn",
+          "nameZh": "Chelsea Finn"
+        },
+        {
+          "name": "Sergey Levine",
+          "personId": "sergey-levine",
+          "url": "https://www2.eecs.berkeley.edu/Faculty/Homepages/svlevine.html",
+          "nameZh": "Sergey Levine"
         }
       ],
       "teams": [
@@ -1917,7 +2045,13 @@
       "publicationStatus": "peer-reviewed",
       "verifiedAt": "2026-10-13",
       "datePrecision": "day",
-      "subfields": []
+      "subfields": [],
+      "verificationNotes": [
+        {
+          "url": "https://arxiv.org/abs/2308.12952",
+          "supports": "Complete author byline checked against the original arXiv record on 2026-10-13; collective team bylines are excluded from personal coauthorship links."
+        }
+      ]
     },
     {
       "id": "extreme-parkour",
@@ -3171,6 +3305,28 @@
         {
           "name": "Chuer Pan",
           "url": "https://chuerpan.com/"
+        },
+        {
+          "name": "Eric Cousineau"
+        },
+        {
+          "name": "Benjamin Burchfiel"
+        },
+        {
+          "name": "Siyuan Feng",
+          "url": "https://www.cs.cmu.edu/~sfeng/"
+        },
+        {
+          "name": "Russ Tedrake",
+          "personId": "russ-tedrake",
+          "url": "https://locomotion.csail.mit.edu/russt.html",
+          "nameZh": "Russ Tedrake"
+        },
+        {
+          "name": "Shuran Song",
+          "personId": "shuran-song",
+          "url": "https://shurans.github.io/",
+          "nameZh": "宋舒然"
         }
       ],
       "teams": [
@@ -3200,7 +3356,13 @@
       "publicationStatus": "peer-reviewed",
       "verifiedAt": "2026-10-13",
       "datePrecision": "day",
-      "subfields": []
+      "subfields": [],
+      "verificationNotes": [
+        {
+          "url": "https://arxiv.org/abs/2402.10329",
+          "supports": "Complete author byline checked against the original arXiv record on 2026-10-13; collective team bylines are excluded from personal coauthorship links."
+        }
+      ]
     },
     {
       "id": "tacman",
@@ -3920,6 +4082,9 @@
       "code": "https://github.com/octo-models/octo",
       "authors": [
         {
+          "name": "Octo Model Team"
+        },
+        {
           "name": "Dibya Ghosh",
           "url": ""
         },
@@ -3930,6 +4095,62 @@
         {
           "name": "Karl Pertsch",
           "url": "https://kpertsch.github.io/"
+        },
+        {
+          "name": "Kevin Black"
+        },
+        {
+          "name": "Oier Mees",
+          "url": "https://www.oiermees.com/"
+        },
+        {
+          "name": "Sudeep Dasari",
+          "url": "https://sudeepdasari.github.io/"
+        },
+        {
+          "name": "Joey Hejna"
+        },
+        {
+          "name": "Tobias Kreiman"
+        },
+        {
+          "name": "Charles Xu"
+        },
+        {
+          "name": "Jianlan Luo"
+        },
+        {
+          "name": "You Liang Tan"
+        },
+        {
+          "name": "Lawrence Yunliang Chen"
+        },
+        {
+          "name": "Pannag Sanketi"
+        },
+        {
+          "name": "Quan Vuong"
+        },
+        {
+          "name": "Ted Xiao"
+        },
+        {
+          "name": "Dorsa Sadigh",
+          "personId": "dorsa-sadigh",
+          "url": "https://dorsa.fyi/",
+          "nameZh": "Dorsa Sadigh"
+        },
+        {
+          "name": "Chelsea Finn",
+          "url": "https://ai.stanford.edu/~cbfinn/",
+          "personId": "chelsea-finn",
+          "nameZh": "Chelsea Finn"
+        },
+        {
+          "name": "Sergey Levine",
+          "personId": "sergey-levine",
+          "url": "https://www2.eecs.berkeley.edu/Faculty/Homepages/svlevine.html",
+          "nameZh": "Sergey Levine"
         }
       ],
       "teams": [
@@ -3956,7 +4177,13 @@
       "publicationStatus": "peer-reviewed",
       "verifiedAt": "2026-10-13",
       "datePrecision": "day",
-      "subfields": []
+      "subfields": [],
+      "verificationNotes": [
+        {
+          "url": "https://arxiv.org/abs/2405.12213",
+          "supports": "Complete author byline checked against the original arXiv record on 2026-10-13; collective team bylines are excluded from personal coauthorship links."
+        }
+      ]
     },
     {
       "id": "robocasa",
@@ -4057,6 +4284,65 @@
         {
           "name": "Siddharth Karamcheti",
           "url": "https://www.siddkaramcheti.com/"
+        },
+        {
+          "name": "Ted Xiao"
+        },
+        {
+          "name": "Ashwin Balakrishna"
+        },
+        {
+          "name": "Suraj Nair",
+          "url": "https://suraj-nair-1.github.io/"
+        },
+        {
+          "name": "Rafael Rafailov"
+        },
+        {
+          "name": "Ethan Foster"
+        },
+        {
+          "name": "Grace Lam"
+        },
+        {
+          "name": "Pannag Sanketi"
+        },
+        {
+          "name": "Quan Vuong"
+        },
+        {
+          "name": "Thomas Kollar"
+        },
+        {
+          "name": "Benjamin Burchfiel"
+        },
+        {
+          "name": "Russ Tedrake",
+          "personId": "russ-tedrake",
+          "url": "https://locomotion.csail.mit.edu/russt.html",
+          "nameZh": "Russ Tedrake"
+        },
+        {
+          "name": "Dorsa Sadigh",
+          "personId": "dorsa-sadigh",
+          "url": "https://dorsa.fyi/",
+          "nameZh": "Dorsa Sadigh"
+        },
+        {
+          "name": "Sergey Levine",
+          "personId": "sergey-levine",
+          "url": "https://www2.eecs.berkeley.edu/Faculty/Homepages/svlevine.html",
+          "nameZh": "Sergey Levine"
+        },
+        {
+          "name": "Percy Liang",
+          "url": "https://cs.stanford.edu/~pliang/"
+        },
+        {
+          "name": "Chelsea Finn",
+          "url": "https://ai.stanford.edu/~cbfinn/",
+          "personId": "chelsea-finn",
+          "nameZh": "Chelsea Finn"
         }
       ],
       "teams": [
@@ -4095,7 +4381,13 @@
       "publicationStatus": "peer-reviewed",
       "verifiedAt": "2026-10-13",
       "datePrecision": "day",
-      "subfields": []
+      "subfields": [],
+      "verificationNotes": [
+        {
+          "url": "https://arxiv.org/abs/2406.09246",
+          "supports": "Complete author byline checked against the original arXiv record on 2026-10-13; collective team bylines are excluded from personal coauthorship links."
+        }
+      ]
     },
     {
       "id": "humanplus",
