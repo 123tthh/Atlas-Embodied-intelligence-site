@@ -14,7 +14,12 @@
     "db:generate": "drizzle-kit generate",
     "build:pages": "node scripts/prepare-pages.mjs && vite build --config vite.pages.config.ts",
     "preview:pages": "vite preview --config vite.pages.config.ts",
-    "dev:pages": "node scripts/prepare-pages.mjs && vite --config vite.pages.config.ts"
+    "dev:pages": "node scripts/prepare-pages.mjs && vite --config vite.pages.config.ts",
+    "release:plan": "node scripts/release.mjs plan",
+    "release:check": "node scripts/release.mjs check",
+    "release:status": "node scripts/release.mjs status",
+    "release:receipt": "node scripts/release.mjs receipt",
+    "release:verify-tree": "node scripts/release.mjs verify-tree"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

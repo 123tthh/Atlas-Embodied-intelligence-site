@@ -1,5 +1,7 @@
 # 部署与维护
 
+日常补录、增量验证和发布重试请遵循 [更新流程](UPDATE_WORKFLOW.md)。发布清单与进度由 `npm run release:plan`、`release:check` 和 `release:status` 管理。
+
 ## 地址与功能
 
 - GitHub Pages：https://123tthh.github.io/Atlas-Embodied-intelligence-site/
@@ -28,7 +30,7 @@ npm run preview:pages
 
 - `lib/catalog.json` / `lib/directory.json` 是版本化基础目录。
 - `lib/pages-extra-research.json` 与 `lib/pages-update-log.json` 保存一次已核验的公开副本，供首次发布、离线开发和源代码发布备用。
-- `scripts/prepare-pages.mjs --refresh` 尝试拉取公开资料，失败时保留仓库副本并明确输出提示。
+- `scripts/prepare-pages.mjs --refresh` 尝试拉取公开资料，失败时保留仓库副本并明确输出提示；刷新合并时，同 ID 的论文与同一关系优先使用当前源码，防止旧云端版本覆盖新修改。
 - `--require-refresh` 用于定时工作流：同步失败就终止发布，现有网页保持可用，不把旧副本显示成新抓取。
 - 生成的 `public/data/` 和 `dist-pages/` 不提交源码；定时抓取仅进入发布构建产物，不自动改写仓库数据文件。
 - 同步只访问公开目录和公开更新记录，不读取留言、邮箱、书架或未审核投稿。

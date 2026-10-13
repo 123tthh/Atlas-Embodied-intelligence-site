@@ -61,3 +61,6 @@ next-env.d.ts
 # Generated GitHub Pages build and public snapshots
 /dist-pages/
 /public/data/
+
+# Local release manifests, exact request payloads and credential-free receipts.
+/.release-state/

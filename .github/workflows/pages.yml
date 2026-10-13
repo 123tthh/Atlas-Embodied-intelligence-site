@@ -3,6 +3,10 @@ name: Publish Embodied Atlas
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'docs/**'
+      - '**/*.md'
+      - 'LICENSE'
   workflow_dispatch:
   schedule:
     # After the Tuesday 10:00 Asia/Shanghai research task.
@@ -27,12 +31,7 @@ jobs:
       - name: Install locked dependencies
         run: npm run install:ci
       - name: Validate catalog and graph behavior
-        run: |
-          node tests/domain.mjs
-          node tests/directory.mjs
-          node tests/graph.mjs
-          node tests/branches.mjs
-          node tests/researcher-network.mjs
+        run: npm run release:check -- --all --no-cache
       - name: Prepare public data for a scheduled refresh
         if: github.event_name == 'schedule'
         run: node scripts/prepare-pages.mjs --require-refresh
