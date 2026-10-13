@@ -57,3 +57,7 @@ next-env.d.ts
 
 .dev.vars*
 *.tsbuildinfo
+
+# Generated GitHub Pages build and public snapshots
+/dist-pages/
+/public/data/

@@ -35,3 +35,11 @@
 - The deployed `/api/updates/instructions` endpoint contains revisioned instructions, source scope, supported credential acquisition, authorization, request format and readback/retry behavior for the linked cloud task. The server-only `ATLAS_UPDATE_TOKEN` runtime secret is provisioned through Sites; no credential is stored in source or the schedule prompt.
 - Phone graph views now use expandable vertical topics/years and readable paper cards. Filters collapse, relation evidence remains accessible, and details open as a bottom panel with keyboard focus handling. The desktop graph and optional free canvas remain available.
 - Validation: TypeScript and production build pass; 22 existing graph/branch checks and 15 local updater integration checks pass. Responsive browser checks cover branch expansion, paper details and filter controls.
+
+## GitHub Pages and open community inbox — 2026-10-13
+
+- Added a standalone static frontend for the repository's GitHub Pages URL. Research browsing, maps, local bookmarks and data exports load from same-site assets without ChatGPT sign-in or external font/script CDNs.
+- Added a private community inbox accepting visitor email and suggestions without registration. Maintainers can read and process messages after signing in; private messages are excluded from public research exports.
+- Added bounded payloads, explicit cross-origin submission rules, atomic daily limits and idempotent retries. An unconfirmed network request preserves the draft and offers an email fallback.
+- Retained optional ChatGPT sign-in for cloud bookmarks, structured research submissions and maintenance.
+- Added a Pages release workflow and weekly public-catalog refresh, repository documentation, public contact details and the MIT license. Network reachability remains dependent on the hosting domains and visitor's network.

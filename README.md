@@ -1,26 +1,52 @@
 # Embodied Atlas · 具身智能研究地图
 
-[打开完整网站](https://embodied-atlas.xyl1122.chatgpt.site) · [项目功能与数据说明](docs/PROJECT_DETAILS.md) · [部署与维护](docs/DEPLOYMENT.md)
+**[打开 GitHub Pages 主页](https://123tthh.github.io/Atlas-Embodied-intelligence-site/)** · [云端版本与可选登录](https://embodied-atlas.xyl1122.chatgpt.site) · [免登录留言](https://123tthh.github.io/Atlas-Embodied-intelligence-site/?view=proposals&lang=zh)
 
-按技术、团队、时间与地点浏览具身智能和机器人研究，支持中文与英文。
+A bilingual research atlas for embodied intelligence and robotics. Explore papers, models, teams, researchers, technical relationships and locations — no sign-in required for browsing or community suggestions.
 
-## 主要功能
+按技术、团队、时间和地点探索具身智能与机器人研究。浏览、搜索、本机收藏和社区留言无需注册或密码，支持中文与英文。
 
-- 技术演化时间轴、可展开的分叉树，以及手机纵向阅读模式。
-- 团队研究线、论文和模型索引、机构/实验室/研究者目录。
-- 世界地图、区域与产业比较，来源证据与可分享的筛选链接。
-- 本机收藏与导出；正式网站另有 ChatGPT 登录、云端书架及投稿审核。
-- 正式网站每 7 天检索并核验新研究，保存新增条目和运行记录。
+## 可以做什么
 
-## GitHub 与线上网站
+- **技术图谱**：时间轴、可展开的分叉树、关系依据与手机纵向阅读模式。
+- **研究目录**：论文、模型、数据集和基准；机构、实验室与研究者的已核验资料。
+- **世界地图**：研究地点、区域比较与带来源的资料导出。
+- **社区留言箱**：填写联系邮箱与建议即可提交，仅维护者能查看；重复重试不会重复入箱。
+- **可选 ChatGPT 登录**：云端书架、结构化论文投稿、投稿审核与维护者留言管理。
 
-这个仓库保存可维护的完整应用源码与版本化基础目录。完整网站继续运行在 Sites 云端，数据库、登录与每周定时任务由线上环境提供。
+截至 2026-10-13：GitHub Pages 的数据副本包含 **356** 项研究、**137** 条关系；其中基础目录 354 项，另有 2 项云端核验研究。资料为代表性收录，不是完整文献库或机构排名。
 
-源码版本：2026-10-13，来自已发布版本 v14。基础目录含 **354** 项研究和 **137** 条关系；线上已另行收录 **2** 项核验研究，截至本次导出共 **356** 项。线上数据库中的新增记录不会自动提交到 GitHub，仓库数据也不会仅因推送就自动改变线上网站。
+## 两个网址如何配合
 
-当前每周任务：**每周二 10:00，Asia/Shanghai**，首次定时执行为 **2026-10-20**。该任务绑定现有线上站点；克隆或 fork 仓库不会复制定时任务、运行时密钥、云端书架或投稿记录。
+| 功能 | GitHub Pages | 云端版本 |
+| --- | --- | --- |
+| 图谱、目录、世界地图、本机收藏 | 无需登录，资料和资源随站点提供 | 无需登录 |
+| 留言箱 | 无需账号；提交时连接公开留言接口 | 无需账号 |
+| ChatGPT 登录、云端书架与结构化投稿 | 提供可选的云端入口 | 支持 |
+| 每周研究更新 | 从公开目录同步后发布静态副本 | 云端任务检索、核验并写入数据库 |
+| 维护者查看留言 | 从云端入口登录 | 仅维护者可见 |
 
-## 本地开发
+GitHub Pages 的初始页面、字体、图标、地图和目录均不依赖 ChatGPT、Google Fonts 或外部 CDN。仅在主动提交留言、选择云端登录或打开论文原站时访问相应服务。
+
+**网络范围说明：**免登录不等于保证任何地区都能直连。`github.io`、云端留言接口、Gmail 和论文外链的可用性取决于当地网络；本项目无法保证大陆所有运营商均无需 VPN。如果需要国内稳定访问，需要另行部署国内可达的前端与留言服务，必要时使用已备案域名。留言提交失败会保留内容并提供邮件备用入口，不会显示虚假的发送成功。
+
+## 联系与社区建议
+
+公开联系邮箱：**khanhlinh3450l@gmail.com**。
+
+优先使用网页的「社区贡献」留言箱。访客邮箱只用于联系与回复，不公开展示，不创建账户，不加入研究目录或导出数据。留言保存到云端后台，**不会自动发送到联系邮箱**；维护者可登录云端网站，在「留言与投稿」中查看。邮件备用入口会打开访客自己的邮件应用，由访客完成发送。
+
+资料补充请尽量附原始论文、官方项目或机构主页。留言不会未经审核直接变成公开研究记录。
+
+## 自动更新与发布
+
+- 云端研究任务：每周二 **10:00（Asia/Shanghai）**，首次定时运行 **2026-10-20**；电脑关机后仍可运行。
+- GitHub Pages 工作流：推送到 `main` 时发布；另在每周二 **11:35（Asia/Shanghai）** 拉取公开目录和运行记录并重新发布。GitHub 定时任务可能延后运行。
+- 定时同步失败时工作流失败并保留已有网页，不用旧资料冒充新资料；手动源码发布可以使用仓库内已核验的副本。
+- 自动同步只读取公开研究和公开更新记录，**不读取或发布留言、邮箱、收藏或未审核投稿**。
+- Pages 发布与 Sites 云端发布分别执行。推送 GitHub 不会自动修改 Sites 的服务端代码或数据库。
+
+## 本地运行
 
 需要 Node.js **22.13+** 和 npm。
 
@@ -28,52 +54,36 @@
 git clone https://github.com/123tthh/Atlas-Embodied-intelligence-site.git
 cd Atlas-Embodied-intelligence-site
 npm run install:ci
-npm run build
-npx wrangler d1 execute DB --local --config dist/server/wrangler.json --file drizzle/0000_remarkable_franklin_storm.sql
-npx wrangler d1 execute DB --local --config dist/server/wrangler.json --file drizzle/0001_solid_korg.sql
-npm run dev
+npm run dev:pages
 ```
 
-开发地址默认为 `http://localhost:5173`。上述两条初始化 SQL 只在空白本地数据库上执行一次。先构建并应用迁移，再运行本地服务；开发环境的登录模拟不代表线上身份认证。首次运行依赖下载和构建需要网络。
+打开终端显示的本地地址，并保留 `/Atlas-Embodied-intelligence-site/` 路径。
 
-本地完整生产预览：
+构建与预览静态网页：
 
 ```sh
-npm run start -- --port 5174
+npm run build:pages
+npm run preview:pages
 ```
 
-## 验证
+完整云端应用的本地数据库、接口测试和发布流程见 [部署与维护](docs/DEPLOYMENT.md)。本地开发的模拟身份不代表线上认证。
 
-```sh
-npx tsc --noEmit
-node tests/domain.mjs
-node tests/directory.mjs
-node tests/geography.mjs
-node tests/regions.mjs
-node tests/research.mjs
-node tests/relevance.mjs
-node tests/graph.mjs
-node tests/branches.mjs
-npm run build
-```
-
-数据库和授权集成检查见 [部署与维护](docs/DEPLOYMENT.md)。这些测试仅用于本机测试数据库。
-
-## 目录
+## 数据与代码
 
 | 路径 | 用途 |
 | --- | --- |
-| `app/` | 网站页面、响应式界面和服务端接口 |
-| `lib/catalog.json` | 版本化研究目录与有来源的技术关系 |
-| `lib/directory.json` | 机构、实验室、人物与代表成果 |
-| `lib/team-reviews.json` | 团队准入及证据登记 |
-| `lib/update-contract.ts` | 自动收录的数据与核验约束 |
-| `db/`、`drizzle/` | 数据库结构与迁移 |
-| `tests/` | 领域、目录、图谱和接口检查 |
-| `.openai/hosting.json` | 现有 Sites 站点的发布绑定 |
+| `app/ui/` | 共用的图谱、目录、地图与留言界面 |
+| `static-site/`、`vite.pages.config.ts` | GitHub Pages 独立前端入口与构建 |
+| `lib/catalog.json`、`lib/directory.json` | 版本化基础研究与机构人物目录 |
+| `lib/team-reviews.json` | 团队准入及原始证据 |
+| `lib/pages-extra-research.json` | 已核验的云端新增研究副本 |
+| `app/api/messages/` | 免登录留言、维护者读取与处理接口 |
+| `db/`、`drizzle/` | 数据库结构和迁移 |
+| `.github/workflows/pages.yml` | Pages 构建、公开数据同步与部署 |
+| `tests/` | 目录、图谱、留言与授权行为检查 |
 
-## 来源与使用范围
+## 许可证与来源
 
-这是有来源的代表性研究目录，不是完整文献库，也不是机构或个人排名。论文全文由原始来源提供；本站保存元数据、链接与核验说明。论文署名、人员当前任职和机构地图代表地点分别记录。
+原创应用代码采用 **[MIT License](LICENSE)**。第三方代码、依赖与底图保留其自身许可；Natural Earth 底图为公共领域。论文、模型、外部网站及其内容的权利归原作者，本项目的 MIT 许可不重新授权这些外部资料。来源链接与核验说明应保留。
 
-Natural Earth 底图为公共领域；第三方源码的许可保留在对应文件中。本次同步未为整个项目新增开源许可；公开仓库本身不等同于授予任意再分发许可。
+更多数据口径见 [项目功能与数据说明](docs/PROJECT_DETAILS.md)。

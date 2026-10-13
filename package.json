@@ -1,5 +1,5 @@
 {
-  "name": "site-creator-vinext-starter",
+  "name": "embodied-atlas",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -11,7 +11,10 @@
     "build": "node scripts/run-framework.mjs build",
     "start": "node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js dev --config dist/server/wrangler.json --local --persist-to .wrangler/state --ip 127.0.0.1 --inspector-port 0",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
-    "db:generate": "drizzle-kit generate"
+    "db:generate": "drizzle-kit generate",
+    "build:pages": "node scripts/prepare-pages.mjs && vite build --config vite.pages.config.ts",
+    "preview:pages": "vite preview --config vite.pages.config.ts",
+    "dev:pages": "node scripts/prepare-pages.mjs && vite --config vite.pages.config.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
@@ -66,5 +69,12 @@
     "miniflare": {
       "sharp": "0.35.4"
     }
+  },
+  "license": "MIT",
+  "description": "Bilingual embodied intelligence and robotics research atlas with technical graphs, team directories, maps and an open community inbox.",
+  "homepage": "https://123tthh.github.io/Atlas-Embodied-intelligence-site/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/123tthh/Atlas-Embodied-intelligence-site.git"
   }
 }

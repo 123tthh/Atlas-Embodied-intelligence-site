@@ -1,0 +1,139 @@
+{
+  "snapshotAt": "2026-10-13T07:34:53.262653+00:00",
+  "updated": "2026-10-13",
+  "papers": [
+    {
+      "title": "WBAG: A Whole-Body and Attached-Geometry Safety Framework for Vision-Language-Action Manipulation",
+      "short": "WBAG",
+      "date": "2026-10-01",
+      "workKind": "paper",
+      "lane": "vla",
+      "venue": "arXiv · 预印本",
+      "publicationStatus": "preprint",
+      "tags": [
+        "Vision-Language-Action",
+        "Robot Safety",
+        "Control Barrier Functions",
+        "Collision Avoidance"
+      ],
+      "authors": [
+        {
+          "name": "Samuel Zhen"
+        },
+        {
+          "name": "Siwon Jo"
+        },
+        {
+          "name": "Yanze Zhang"
+        },
+        {
+          "name": "Wenhao Luo"
+        }
+      ],
+      "summary": "面向 VLA 操作策略的推理期安全框架，同时建模机器人全身和抓取物体的几何形状。随抓取状态调整保护区域，并用可微控制屏障函数约束修正动作，以减少与场景及被抓物体相关的碰撞。论文报告 SafeLIBERO 仿真评测；本站按预印本收录，不将仿真结果表述为现实安全保证。",
+      "summaryEn": "An inference-time safety framework for VLA manipulation that models both the articulated robot and grasp-dependent attached objects. Differentiable control-barrier constraints modify actions to avoid collisions. The paper reports SafeLIBERO simulation evaluation; this record is labelled as a preprint.",
+      "arxiv": "https://arxiv.org/abs/2610.01083",
+      "project": "https://samuelzhen.com/projects/wbag",
+      "code": "",
+      "modelUrl": "",
+      "sources": [
+        "https://arxiv.org/abs/2610.01083",
+        "https://arxiv.org/html/2610.01083v2"
+      ],
+      "id": "auto-203d50fd608422c37991",
+      "year": 2026,
+      "teams": [],
+      "organizationIds": [],
+      "labIds": [],
+      "verifiedAt": "2026-10-13",
+      "ingestion": "weekly",
+      "verificationNotes": [
+        {
+          "url": "https://arxiv.org/abs/2610.01083",
+          "supports": "arXiv 记录确认完整题名、四名作者及 2026 年 10 月 1 日首次提交；10 月 7 日为修订日，不作为首次公开日期。"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.01083v2",
+          "supports": "原文描述全身与抓取物体几何、控制屏障函数约束和 SafeLIBERO 仿真评测，支持方法与评测范围的概述。"
+        }
+      ]
+    },
+    {
+      "title": "Reconstruct, Practice, Go Real: Guided Self-Improvement for Embodied Agents",
+      "short": "RPG",
+      "date": "2026-10-01",
+      "workKind": "paper",
+      "lane": "simulation",
+      "venue": "arXiv · 预印本",
+      "publicationStatus": "preprint",
+      "tags": [
+        "Embodied Agent",
+        "Simulation Practice",
+        "Skill Library",
+        "Self-Improvement",
+        "Sim-to-Real"
+      ],
+      "authors": [
+        {
+          "name": "Yen-Jen Wang"
+        },
+        {
+          "name": "Haozhe Jiang"
+        },
+        {
+          "name": "Shuying Deng"
+        },
+        {
+          "name": "Haoru Xue"
+        },
+        {
+          "name": "Weirui Ye"
+        },
+        {
+          "name": "Rocky Duan"
+        },
+        {
+          "name": "Nika Haghtalab"
+        },
+        {
+          "name": "S. Shankar Sastry"
+        },
+        {
+          "name": "Pieter Abbeel"
+        },
+        {
+          "name": "Haozhi Qi"
+        }
+      ],
+      "summary": "从离线数据构造仿真练习任务，利用执行反馈、仿真状态和视频诊断失败，再改进可复用技能库与系统提示，不更新模型权重。作者报告跨任务检查、仿真评估及经过统一标定和硬件适配后的实机实验。项目页当次核验标注代码尚待发布，因此不标为已有公开代码。",
+      "summaryEn": "RPG constructs simulation practice from offline data, diagnoses execution failures and revises reusable skills and system prompts without updating model weights. The authors report cross-task validation, simulation evaluation and physical deployment after common calibration and hardware adaptation. Code was marked as forthcoming when checked.",
+      "arxiv": "https://arxiv.org/abs/2610.02204",
+      "project": "https://rpg-robot.github.io/",
+      "code": "",
+      "modelUrl": "",
+      "sources": [
+        "https://arxiv.org/abs/2610.02204",
+        "https://arxiv.org/html/2610.02204v1",
+        "https://rpg-robot.github.io/"
+      ],
+      "id": "auto-00188c6decced49fd33a",
+      "year": 2026,
+      "teams": [],
+      "organizationIds": [],
+      "labIds": [],
+      "verifiedAt": "2026-10-13",
+      "ingestion": "weekly",
+      "verificationNotes": [
+        {
+          "url": "https://arxiv.org/abs/2610.02204",
+          "supports": "arXiv 首次提交记录确认 2026 年 10 月 1 日、完整论文题名及十名作者；本次按预印本状态收录。"
+        },
+        {
+          "url": "https://rpg-robot.github.io/",
+          "supports": "官方项目页说明通过仿真练习修订技能库与系统提示，报告统一标定后的实机实验，并将代码链接标为待发布。"
+        }
+      ]
+    }
+  ],
+  "edges": []
+}

@@ -1,0 +1,61 @@
+name: Publish Embodied Atlas
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # After the Tuesday 10:00 Asia/Shanghai research task.
+    - cron: '35 3 * * 2'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install locked dependencies
+        run: npm run install:ci
+      - name: Validate catalog and graph behavior
+        run: |
+          node tests/domain.mjs
+          node tests/directory.mjs
+          node tests/graph.mjs
+          node tests/branches.mjs
+      - name: Prepare public data for a scheduled refresh
+        if: github.event_name == 'schedule'
+        run: node scripts/prepare-pages.mjs --require-refresh
+      - name: Prepare public data for a source release
+        if: github.event_name != 'schedule'
+        run: node scripts/prepare-pages.mjs --refresh
+      - name: Build independent Pages frontend
+        run: npx vite build --config vite.pages.config.ts
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload static website only
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist-pages
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

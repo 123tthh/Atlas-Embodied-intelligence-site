@@ -1,0 +1,45 @@
+{
+  "revision": 1,
+  "schedule": {
+    "action": "configure",
+    "enabled": true,
+    "automationId": "Automation_6efcb0d449348191a2918d36916d0b19",
+    "timezone": "Asia/Shanghai",
+    "cadenceDays": 7,
+    "time": "10:00",
+    "weekday": "Tuesday"
+  },
+  "runs": [
+    {
+      "status": "success",
+      "windowStart": "2026-09-29",
+      "windowEnd": "2026-10-13",
+      "summary": "首次启用的小范围检索与入库验证：从近期机器人研究线索回查原始论文，补入 WBAG 与 RPG 两项预印本，并保留作者、首次公开日期、方法概述与来源。该次验证不代表全部会议、项目或社交发布的穷尽检索。 WBAG 项目页本次未能读取，方法信息已从可访问的论文全文核验。",
+      "searchedSources": [
+        "https://arxiv.org/abs/2610.01083",
+        "https://arxiv.org/html/2610.01083v2",
+        "https://arxiv.org/abs/2610.02204",
+        "https://arxiv.org/html/2610.02204v1",
+        "https://rpg-robot.github.io/"
+      ],
+      "failures": [],
+      "added": [
+        {
+          "id": "auto-203d50fd608422c37991",
+          "title": "WBAG: A Whole-Body and Attached-Geometry Safety Framework for Vision-Language-Action Manipulation",
+          "url": "https://arxiv.org/abs/2610.01083"
+        },
+        {
+          "id": "auto-00188c6decced49fd33a",
+          "title": "Reconstruct, Practice, Go Real: Guided Self-Improvement for Embodied Agents",
+          "url": "https://arxiv.org/abs/2610.02204"
+        }
+      ],
+      "skipped": [],
+      "runId": "initial-20261013-verified-research",
+      "createdAt": 1791873114877
+    }
+  ],
+  "instructions": "/api/updates/instructions",
+  "snapshotAt": "2026-10-13T07:34:53.262873+00:00"
+}
