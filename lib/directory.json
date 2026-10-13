@@ -15212,6 +15212,74 @@
           "verifiedAt": "2026-10-13"
         }
       ]
+    },
+    {
+      "id": "yitang-li",
+      "name": "Yitang Li",
+      "nameZh": "李忆唐",
+      "aliases": [
+        "Li Yitang",
+        "Yi Tang Li"
+      ],
+      "homepage": "https://liyitang22.github.io/",
+      "careerStage": "doctoral",
+      "careerVerifiedAt": "2026-10-13",
+      "researchPaperIds": [
+        "bfm-zero",
+        "hold-my-beer"
+      ],
+      "topics": [
+        "Humanoids",
+        "Whole-body control",
+        "Reinforcement learning",
+        "Character animation",
+        "Human motion data"
+      ],
+      "summaryZh": "斯坦福大学计算机科学博士生，目前与宋舒然开展轮转研究；本科毕业于清华姚班，曾与易立研究角色动画，2025 年在石冠亚指导下于 CMU LeCAR 实习。代表作包括 BFM-Zero（ICLR 2026，共同第一作者）和 Hold My Beer / SoFTA（CoRL 2025，第一作者）。",
+      "summaryEn": "Computer Science PhD student at Stanford, currently rotating with Shuran Song. Previously a Tsinghua Yao Class undergraduate working with Li Yi on character animation and a 2025 CMU LeCAR intern advised by Guanya Shi. Co-first author of BFM-Zero (ICLR 2026) and first author of Hold My Beer / SoFTA (CoRL 2025).",
+      "affiliations": [
+        {
+          "organizationId": "stanford",
+          "roleZh": "计算机科学博士生；与宋舒然轮转研究",
+          "roleEn": "Computer Science PhD student; rotating with Shuran Song",
+          "sourceUrl": "https://liyitang22.github.io/"
+        },
+        {
+          "organizationId": "tsinghua",
+          "roleZh": "姚班本科校友；曾与易立研究角色动画",
+          "roleEn": "Yao Class B.E. alumnus; previously worked with Li Yi on character animation",
+          "sourceUrl": "https://liyitang22.github.io/"
+        },
+        {
+          "organizationId": "cmu",
+          "labId": "lecar",
+          "roleZh": "2025 年春夏学生实习生；导师石冠亚",
+          "roleEn": "Student intern in spring and summer 2025; advised by Guanya Shi",
+          "sourceUrl": "https://liyitang22.github.io/"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Personal homepage: current position and research / 个人主页",
+          "url": "https://liyitang22.github.io/",
+          "verifiedAt": "2026-10-13"
+        },
+        {
+          "label": "Tsinghua profile / 清华人物报道",
+          "url": "https://iiis.tsinghua.edu.cn/info/1018/4844.htm",
+          "verifiedAt": "2026-10-13"
+        },
+        {
+          "label": "BFM-Zero official project / 共同第一作者",
+          "url": "https://lecar-lab.github.io/BFM-Zero/",
+          "verifiedAt": "2026-10-13"
+        },
+        {
+          "label": "CoRL 2025 proceedings / 第一作者",
+          "url": "https://proceedings.mlr.press/v305/li25i.html",
+          "verifiedAt": "2026-10-13"
+        }
+      ]
     }
   ],
   "editorialNotes": {
@@ -30889,6 +30957,90 @@
         {
           "label": "Project: CoRL 2026 and release status / 项目与发布状态",
           "url": "https://echo-in-the-steps.github.io/",
+          "verifiedAt": "2026-10-13"
+        }
+      ],
+      "verifiedAt": "2026-10-13"
+    },
+    {
+      "id": "bfm-zero",
+      "title": "BFM-Zero: A Promptable Behavioral Foundation Model for Humanoid Control Using Unsupervised Reinforcement Learning",
+      "kind": "paper",
+      "date": "2025-11-06",
+      "organizationIds": [
+        "tsinghua",
+        "cmu",
+        "meta"
+      ],
+      "labIds": [
+        "lecar"
+      ],
+      "paperUrl": "https://arxiv.org/abs/2511.04131",
+      "projectUrl": "https://lecar-lab.github.io/BFM-Zero/",
+      "codeUrl": "https://github.com/LeCAR-Lab/BFM-Zero",
+      "venue": "ICLR 2026",
+      "status": "peer-reviewed",
+      "summaryZh": "通过无监督强化学习与前向—后向表示，把动作、目标和奖励映射到共享空间，使同一人形控制策略支持零样本动作跟踪、目标到达与奖励优化，并在 Unitree G1 上验证。",
+      "summaryEn": "Learns a shared motion, goal and reward space with unsupervised reinforcement learning and forward-backward representations. A single policy supports zero-shot tracking, goal reaching and reward optimization, validated on Unitree G1.",
+      "signals": [
+        "peer-reviewed",
+        "code"
+      ],
+      "sources": [
+        {
+          "label": "Original paper / 原始论文",
+          "url": "https://arxiv.org/abs/2511.04131",
+          "verifiedAt": "2026-10-13"
+        },
+        {
+          "label": "Official project / 官方项目",
+          "url": "https://lecar-lab.github.io/BFM-Zero/",
+          "verifiedAt": "2026-10-13"
+        },
+        {
+          "label": "Conference publication / 会议记录",
+          "url": "https://openreview.net/pdf?id=jkhl2oI0g5",
+          "verifiedAt": "2026-10-13"
+        }
+      ],
+      "verifiedAt": "2026-10-13"
+    },
+    {
+      "id": "hold-my-beer",
+      "title": "Hold My Beer: Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control",
+      "kind": "paper",
+      "date": "2025-05-30",
+      "organizationIds": [
+        "cmu"
+      ],
+      "labIds": [
+        "lecar"
+      ],
+      "paperUrl": "https://arxiv.org/abs/2505.24198",
+      "projectUrl": "https://lecar-lab.github.io/SoFTA/",
+      "codeUrl": "https://github.com/LeCAR-Lab/SoFTA",
+      "venue": "CoRL 2025",
+      "status": "peer-reviewed",
+      "summaryZh": "SoFTA 将上、下肢控制分为不同频率与奖励的双智能体，在行走时稳定手部末端；上肢以 100 Hz、下肢以 50 Hz 运行，并在 Unitree G1 和 Booster T1 上演示持杯行走与稳定拍摄。",
+      "summaryEn": "SoFTA separates upper- and lower-body control into agents with distinct rewards and frequencies: 100 Hz for end-effector stabilization and 50 Hz for walking. Real-world G1 and Booster T1 demonstrations include carrying drinks and recording stable video.",
+      "signals": [
+        "peer-reviewed",
+        "code"
+      ],
+      "sources": [
+        {
+          "label": "Original paper / 原始论文",
+          "url": "https://arxiv.org/abs/2505.24198",
+          "verifiedAt": "2026-10-13"
+        },
+        {
+          "label": "Official project / 官方项目",
+          "url": "https://lecar-lab.github.io/SoFTA/",
+          "verifiedAt": "2026-10-13"
+        },
+        {
+          "label": "Conference publication / 会议记录",
+          "url": "https://proceedings.mlr.press/v305/li25i.html",
           "verifiedAt": "2026-10-13"
         }
       ],

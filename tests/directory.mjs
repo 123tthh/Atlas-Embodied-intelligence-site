@@ -11,7 +11,7 @@ const domain=await import(domainUrl);
 const data=JSON.parse(await read('lib/directory.json')),catalog=JSON.parse(await read('lib/catalog.json'));
 let passed=0;const check=(name,fn)=>{fn();passed++;console.log('PASS '+name)};
 const search=q=>data.people.filter(p=>directory.directoryMatches(q,directory.personSearchValues(p,data))).map(p=>p.id);
-check('CMU RI and reverse-order name find Guanya Shi',()=>assert.deepEqual(search('CMU RI shi guanya'),['guanya-shi']));
+check('CMU RI and reverse-order name include Guanya Shi',()=>assert(search('CMU RI shi guanya').includes('guanya-shi')));
 check('World Labs and compact name find Fei-Fei Li',()=>assert.deepEqual(search('world-labs li feifei'),['fei-fei-li']));
 check('Chinese company queries resolve verified people',()=>{assert(search('银河通用').includes('he-wang'));assert(search('宇树').includes('wang-xingxing'))});
 check('Organization queries also find lab aliases',()=>assert(data.organizations.some(o=>o.id==='cmu'&&directory.directoryMatches('LeCAR',directory.organizationSearchValues(o,data)))));

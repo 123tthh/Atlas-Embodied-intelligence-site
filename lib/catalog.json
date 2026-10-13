@@ -22742,6 +22742,190 @@
           "supports": "Paper confirms the depth-based framework, Isaac Lab training and Unitree G1 experiments. The paper credits Tsinghua University; it does not list Litchi Lab as an affiliation."
         }
       ]
+    },
+    {
+      "id": "bfm-zero",
+      "title": "BFM-Zero: A Promptable Behavioral Foundation Model for Humanoid Control Using Unsupervised Reinforcement Learning",
+      "short": "BFM-Zero",
+      "year": 2025,
+      "date": "2025-11-06",
+      "venue": "ICLR 2026",
+      "lane": "locomotion",
+      "tags": [
+        "Humanoids",
+        "Behavioral Foundation Model",
+        "Unsupervised Reinforcement Learning",
+        "Whole-body Control",
+        "Sim-to-Real"
+      ],
+      "authors": [
+        {
+          "name": "Yitang Li",
+          "nameZh": "李忆唐",
+          "url": "https://liyitang22.github.io/"
+        },
+        {
+          "name": "Zhengyi Luo"
+        },
+        {
+          "name": "Tonghe Zhang"
+        },
+        {
+          "name": "Cunxi Dai"
+        },
+        {
+          "name": "Anssi Kanervisto"
+        },
+        {
+          "name": "Andrea Tirinzoni"
+        },
+        {
+          "name": "Haoyang Weng"
+        },
+        {
+          "name": "Kris Kitani"
+        },
+        {
+          "name": "Mateusz Guzek"
+        },
+        {
+          "name": "Ahmed Touati"
+        },
+        {
+          "name": "Alessandro Lazaric"
+        },
+        {
+          "name": "Matteo Pirotta"
+        },
+        {
+          "name": "Guanya Shi"
+        }
+      ],
+      "organizationIds": [
+        "tsinghua",
+        "cmu",
+        "meta"
+      ],
+      "labIds": [
+        "lecar"
+      ],
+      "teams": [
+        "Tsinghua University",
+        "Carnegie Mellon University",
+        "LeCAR",
+        "Meta"
+      ],
+      "project": "https://lecar-lab.github.io/BFM-Zero/",
+      "arxiv": "https://arxiv.org/abs/2511.04131",
+      "code": "https://github.com/LeCAR-Lab/BFM-Zero",
+      "summary": "通过无监督强化学习与前向—后向表示，把动作、目标和奖励映射到共享空间，使同一人形控制策略支持零样本动作跟踪、目标到达与奖励优化，并在 Unitree G1 上验证。",
+      "summaryEn": "Learns a shared motion, goal and reward space with unsupervised reinforcement learning and forward-backward representations. A single policy supports zero-shot tracking, goal reaching and reward optimization, validated on Unitree G1.",
+      "sources": [
+        "https://arxiv.org/abs/2511.04131",
+        "https://lecar-lab.github.io/BFM-Zero/",
+        "https://openreview.net/pdf?id=jkhl2oI0g5"
+      ],
+      "verificationNotes": [
+        {
+          "url": "https://openreview.net/pdf?id=jkhl2oI0g5",
+          "supports": "Published as an ICLR 2026 conference paper; lists Tsinghua IIIS, CMU and Meta. Yitang Li and Zhengyi Luo contributed equally. Tsinghua authors completed this work during CMU internships."
+        }
+      ],
+      "publicationStatus": "peer-reviewed",
+      "recognitions": [],
+      "verifiedAt": "2026-10-13",
+      "datePrecision": "day",
+      "subfields": [
+        "humanoid",
+        "legged-locomotion",
+        "reinforcement-learning",
+        "sim-to-real"
+      ]
+    },
+    {
+      "id": "hold-my-beer",
+      "title": "Hold My Beer: Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control",
+      "short": "Hold My Beer / SoFTA",
+      "year": 2025,
+      "date": "2025-05-30",
+      "venue": "CoRL 2025",
+      "lane": "locomotion",
+      "tags": [
+        "Humanoids",
+        "Locomotion",
+        "End-Effector Stabilization",
+        "Multi-Agent Reinforcement Learning",
+        "Sim-to-Real"
+      ],
+      "authors": [
+        {
+          "name": "Yitang Li",
+          "nameZh": "李忆唐",
+          "url": "https://liyitang22.github.io/"
+        },
+        {
+          "name": "Yuanhang Zhang"
+        },
+        {
+          "name": "Wenli Xiao"
+        },
+        {
+          "name": "Chaoyi Pan"
+        },
+        {
+          "name": "Haoyang Weng"
+        },
+        {
+          "name": "Guanqi He"
+        },
+        {
+          "name": "Tairan He"
+        },
+        {
+          "name": "Guanya Shi"
+        }
+      ],
+      "organizationIds": [
+        "cmu"
+      ],
+      "labIds": [
+        "lecar"
+      ],
+      "teams": [
+        "Carnegie Mellon University",
+        "LeCAR"
+      ],
+      "project": "https://lecar-lab.github.io/SoFTA/",
+      "arxiv": "https://arxiv.org/abs/2505.24198",
+      "code": "https://github.com/LeCAR-Lab/SoFTA",
+      "summary": "SoFTA 将上、下肢控制分为不同频率与奖励的双智能体，在行走时稳定手部末端；上肢以 100 Hz、下肢以 50 Hz 运行，并在 Unitree G1 和 Booster T1 上演示持杯行走与稳定拍摄。",
+      "summaryEn": "SoFTA separates upper- and lower-body control into agents with distinct rewards and frequencies: 100 Hz for end-effector stabilization and 50 Hz for walking. Real-world G1 and Booster T1 demonstrations include carrying drinks and recording stable video.",
+      "sources": [
+        "https://arxiv.org/abs/2505.24198",
+        "https://lecar-lab.github.io/SoFTA/",
+        "https://proceedings.mlr.press/v305/li25i.html",
+        "https://arxiv.org/html/2505.24198v1"
+      ],
+      "verificationNotes": [
+        {
+          "url": "https://proceedings.mlr.press/v305/li25i.html",
+          "supports": "CoRL 2025 proceedings confirm title, author order and publication venue."
+        },
+        {
+          "url": "https://arxiv.org/html/2505.24198v1",
+          "supports": "Paper lists CMU as its affiliation and notes that Yitang Li completed the work as a visiting intern. Current Stanford affiliation is not assigned retrospectively to this paper."
+        }
+      ],
+      "publicationStatus": "peer-reviewed",
+      "recognitions": [],
+      "verifiedAt": "2026-10-13",
+      "datePrecision": "day",
+      "subfields": [
+        "humanoid",
+        "legged-locomotion",
+        "reinforcement-learning",
+        "sim-to-real"
+      ]
     }
   ],
   "edges": [
