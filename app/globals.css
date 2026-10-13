@@ -3,6 +3,7 @@
 @import './team-graph.css';
 @import "tailwindcss";
 @import './research.css';
+@import './graph-navigation.css';
 
 :root {
   color-scheme: light;
