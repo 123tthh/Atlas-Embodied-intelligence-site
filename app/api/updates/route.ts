@@ -1,4 +1,3 @@
-import {env} from 'cloudflare:workers';
 import {desc,eq} from 'drizzle-orm';
 import {z} from 'zod';
 import {getDb} from '../../../db';
@@ -6,11 +5,11 @@ import {automaticPapers,updateRuns,updateSettings} from '../../../db/schema';
 import {catalog,error,privateJson} from '../../../lib/server';
 import {canonicalUrl} from '../../../lib/domain';
 import {duplicatePaper,toAutomaticPaper,updateBatch} from '../../../lib/update-contract';
-const digest=async(s:string)=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s))),v=>v.toString(16).padStart(2,'0')).join('');
-export async function GET(){try{const db=getDb(),rows=await db.select().from(updateRuns).orderBy(desc(updateRuns.createdAt)).limit(12),settings=await db.select().from(updateSettings).where(eq(updateSettings.key,'schedule'));return privateJson({revision:1,schedule:settings[0]?JSON.parse(settings[0].payload):{enabled:false},runs:rows.map(r=>({...JSON.parse(r.payload),runId:r.id,createdAt:r.createdAt})),instructions:'/api/updates/instructions'});}catch{return error('更新记录暂时无法读取',503);}}
+import {authorizedUpdater,digest} from '../../../lib/update-auth';
+import {reviewPolicy} from '../../../lib/review-contract';
+export async function GET(){try{const db=getDb(),rows=await db.select().from(updateRuns).orderBy(desc(updateRuns.createdAt)).limit(12),settings=await db.select().from(updateSettings).where(eq(updateSettings.key,'schedule'));return privateJson({revision:1,communityReview:reviewPolicy,schedule:settings[0]?JSON.parse(settings[0].payload):{enabled:false},runs:rows.map(r=>({...JSON.parse(r.payload),runId:r.id,createdAt:r.createdAt})),instructions:'/api/updates/instructions'});}catch{return error('更新记录暂时无法读取',503);}}
 export async function POST(request:Request){
- const secret=(env as unknown as {ATLAS_UPDATE_TOKEN?:string}).ATLAS_UPDATE_TOKEN,token=request.headers.get('X-Atlas-Update-Token')||'';
- if(!secret||!token||token.length>4096||await digest(secret)!==await digest(token))return error('Updater authorization required',401);
+ if(!await authorizedUpdater(request)){await request.body?.cancel().catch(()=>{});return error('Updater authorization required',401);}
  if(!request.headers.get('content-type')?.startsWith('application/json'))return error('Expected JSON',415);
  const raw=await request.text();if(raw.length>220000)return error('Batch too large',413);let value;try{value=JSON.parse(raw);}catch{return error('Invalid JSON');}
  const db=getDb();
