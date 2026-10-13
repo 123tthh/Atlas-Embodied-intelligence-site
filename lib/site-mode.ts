@@ -16,7 +16,12 @@ export function publicApi(path: string) {
 }
 
 export function signInUrl(returnTo = '/') {
-  return (STATIC_MODE ? LIVE_ORIGIN : '') + '/signin-with-chatgpt?return_to=' + encodeURIComponent(returnTo);
+  return (STATIC_MODE ? LIVE_ORIGIN : '') + '/login?return_to=' + encodeURIComponent(returnTo);
+}
+
+export function signOutUrl(provider?: 'chatgpt' | 'github') {
+  const chatgpt = '/signout-with-chatgpt?return_to=/';
+  return provider === 'github' ? '/api/auth/signout?callbackUrl=' + encodeURIComponent(chatgpt) : chatgpt;
 }
 
 export function paperUrl(url: URL, id: string, preserveView = false) {

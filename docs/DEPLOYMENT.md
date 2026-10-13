@@ -104,3 +104,16 @@ python3 tests/updates.py
 数据库以原子批次更新累计及每日计数，重复或并发重发同一事件只计一次；每天每个浏览器最多接收 500 次浏览。幂等事件保留 7 天，每日记录保留 400 天，匿名累计访客计数持续保留。轮换用于 HMAC 的服务端秘密会让后续浏览器标识重新计算，应在维护时说明对累计去重的影响。
 
 新增迁移 `0003_purple_mephisto.sql` 仅创建统计表与索引，不修改现有投稿、收藏或研究数据。发布前在本地应用这条迁移，使用 `tests/analytics.py` 检查权限、日期口径、跨站来源、幂等与并发计数；不能向线上发送合成访问来测试。
+
+
+## GitHub 维护者登录
+
+云端 `/login` 提供 GitHub 与现有 ChatGPT 登录。GitHub 维护者绑定固定账号 ID `184354549`（当前用户名 `123tthh`），不通过用户名或邮箱推断权限。其他 GitHub 账号会被拒绝，其他 ChatGPT 用户只能使用个人功能。网站登录不会授予仓库写权限。
+
+在 `123tthh` 的 GitHub 设置中注册 OAuth App：名称 `Embodied Atlas`，Homepage `https://embodied-atlas.xyl1122.chatgpt.site`，Authorization callback URL `https://embodied-atlas.xyl1122.chatgpt.site/api/auth/callback/github`。关闭 Device Flow。只请求 `read:user`，不申请邮箱或仓库权限。
+
+Sites 运行时密钥：`AUTH_GITHUB_ID`、`AUTH_GITHUB_SECRET`、至少 32 字符的随机 `AUTH_SECRET`。全部由服务器读取，不能放入源码、前端变量或构建产物；设置后重新部署。缺少配置时入口显示配置中，API 返回 503。
+
+认证使用 Auth.js，开启 state、PKCE 和 CSRF 检查。生产会话 cookie 为 `__Host-atlas.session-token`，Secure、HttpOnly、SameSite=Lax，8 小时过期。GitHub access token 不写入会话，管理接口每次验证加密会话及固定账号 ID，写接口校验同源请求。退出 GitHub 后同时退出当前 ChatGPT 网站会话。两种登录方式使用独立个人收藏 ID，不按邮箱自动合并。
+
+验证：`tests/github-auth.mjs` 检查 OAuth/CSRF/PKCE、回调失败、会话签名/过期/身份边界；本地接口集成验证私密收件箱与管理权限。真实 GitHub 登录需要部署密钥后由维护者授权，模拟回调不能替代该验收。

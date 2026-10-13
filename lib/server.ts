@@ -1,15 +1,18 @@
 import { env } from 'cloudflare:workers';
 import { eq } from 'drizzle-orm';
 import { getChatGPTUser } from '../app/chatgpt-auth';
+import { getGitHubUser } from './github-auth';
 import { getDb } from '../db';
 import { proposals,automaticPapers } from '../db/schema';
 import seed from './catalog.json';
 import { arxivId } from './domain';
 import type { Catalog, Paper, Edge, Proposal } from './types';
 export async function identity() {
+  const github = await getGitHubUser();
+  if (github) return github;
   const user=await getChatGPTUser();
   const admins=((env as unknown as {ADMIN_EMAILS?:string}).ADMIN_EMAILS??'').split(',').map(s=>s.trim().toLowerCase()).filter(Boolean);
-  return user?{...user,isAdmin:admins.includes(user.email.toLowerCase())}:null;
+  return user?{...user,isAdmin:admins.includes(user.email.toLowerCase()),provider:'chatgpt' as const}:null;
 }
 export function checkOrigin(request:Request) {const origin=request.headers.get('origin');return origin===new URL(request.url).origin&&request.headers.get('content-type')?.startsWith('application/json');}
 export const error=(message:string,status=400)=>Response.json({error:message},{status,headers:{'Cache-Control':'no-store'}});

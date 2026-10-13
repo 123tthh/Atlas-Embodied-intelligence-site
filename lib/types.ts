@@ -11,7 +11,7 @@ export type Paper = {
 };
 export type Edge = { source: string; target: string; type: 'extends' | 'distills' | 'uses' | 'comparable'; label: string; labelEn?: string; evidence: string; evidenceEn?: string; url: string; editorial: boolean };
 export type Catalog = { papers: Paper[]; edges: Edge[]; updated: string; cutoff?:string; coverage?:CoverageEntry[] };
-export type Identity = { displayName: string; isAdmin: boolean } | null;
+export type Identity = { displayName: string; isAdmin: boolean; provider?: 'chatgpt' | 'github' } | null;
 export type Proposal = { id: string; title: string; url: string; project: string; keywords: string[]; year: number; lane: Lane; authors: string; relationTo: string; relationType: Edge['type']; evidence: string; evidenceUrl: string; status: string; createdAt: number; reviewNote: string };
 export type EvidenceSource = { label: string; url: string; verifiedAt?: string };
 export type Sector = 'research' | 'humanoid' | 'industrial' | 'logistics' | 'service' | 'medical' | 'autonomy' | 'enabling';

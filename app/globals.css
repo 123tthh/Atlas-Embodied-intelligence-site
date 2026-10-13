@@ -637,3 +637,8 @@ button, a { transition: background .15s, color .15s, border-color .15s; }
  .weekly-update-heading .eyebrow { font-size:9px; }
  .weekly-status { align-items:flex-start; flex-direction:column; }
 }
+
+/* First-party login choice, shared by cloud and Pages links. */
+.atlas-login{min-height:100dvh;display:grid;place-items:center;background:var(--bg,#f6f8f7);padding:36px 20px}
+.atlas-login-card{width:min(100%,500px);border:1px solid var(--line,#dfe7e4);background:var(--surface,#fff);border-radius:22px;padding:34px;box-shadow:0 20px 70px #193c3110;display:flex;flex-direction:column;gap:16px}
+.atlas-login-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.atlas-login-top a{text-decoration:none;color:inherit}.atlas-login-card h1{font-size:30px;letter-spacing:-.04em;margin:0}.atlas-login-card>p{font-size:14px;line-height:1.8;color:var(--muted,#68766f);margin:0 0 6px}.atlas-login-provider{width:100%;min-height:50px;justify-content:center;text-decoration:none;gap:9px}.atlas-login-provider small{font-size:10px;margin-left:auto;opacity:.85}.atlas-login-provider:disabled{opacity:.6;cursor:not-allowed}.atlas-login-policy{display:flex;gap:10px;margin-top:8px;border-top:1px solid var(--line,#dfe7e4);padding-top:20px;color:var(--muted,#68766f)}.atlas-login-policy>svg{flex-shrink:0;margin-top:3px}.atlas-login-policy p{font-size:12px;line-height:1.8;margin:0}.atlas-login-hint{font-size:11px;line-height:1.6;color:var(--muted,#68766f)}.atlas-login-card>.text-button{align-self:flex-start;margin-top:8px;text-decoration:none}@media(max-width:540px){.atlas-login-card{padding:25px}.atlas-login-card h1{font-size:26px}}
