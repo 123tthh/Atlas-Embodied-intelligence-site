@@ -151,8 +151,6 @@
   "实线代表有来源的方法扩展、蒸馏或资源使用；虚线是编辑推荐的同类比较。点击连线可检查证据。论文作者为节选，署名机构保留发表时信息；机构与人物目录另行核验当前公开归属，并提供官方依据。": "Solid lines represent sourced extensions, distillation or resource use. Dashed lines group related approaches editorially. Select a link to inspect evidence. Paper authors are a selection and publication affiliations reflect the original work. Current public roles are separately verified in the people directory.",
   "收藏与贡献": "Bookmarks & contributions",
   "访客收藏保存在当前浏览器，可导入导出；登录收藏保存在云端。投稿需登录，提交后进入审核，只有维护者能批准发布。站外检索由目标网站提供，本站不会自动抓取 Google Scholar。": "Guest bookmarks are stored in this browser and can be imported or exported. Signed-in bookmarks use cloud storage. Contributions require sign-in and maintainer approval before publication. External search is provided by the destination sites; Google Scholar is not scraped.",
-  "数据导出": "Data export",
-  "下载当前研究目录 JSON": "Download catalog JSON",
   "贡献一篇研究": "Contribute research",
   "投稿已入库，等待维护者审核": "Contribution saved for maintainer review",
   "为地图补上你的发现": "Add your discovery to the atlas",
