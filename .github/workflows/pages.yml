@@ -32,6 +32,7 @@ jobs:
           node tests/directory.mjs
           node tests/graph.mjs
           node tests/branches.mjs
+          node tests/researcher-network.mjs
       - name: Prepare public data for a scheduled refresh
         if: github.event_name == 'schedule'
         run: node scripts/prepare-pages.mjs --require-refresh

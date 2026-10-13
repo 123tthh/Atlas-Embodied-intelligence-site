@@ -7638,6 +7638,56 @@
         "noteZh": "校区横跨 Urbana 与 Champaign；标记使用 Urbana 城市级近似坐标，官网列出 Urbana 的 Henry Administration Building 及招生办公室地址。",
         "noteEn": "The campus spans Urbana and Champaign. This marker uses approximate Urbana city coordinates; the official contact page lists the Henry Administration Building and admissions addresses in Urbana."
       }
+    },
+    {
+      "id": "shanghai-qi-zhi",
+      "name": "Shanghai Qi Zhi Institute",
+      "nameZh": "上海期智研究院",
+      "aliases": [
+        "Shanghai Qizhi Institute",
+        "SQZ"
+      ],
+      "type": "institute",
+      "country": "CN",
+      "url": "https://www.sqz.ac.cn/",
+      "sector": "research",
+      "summaryZh": "开展人工智能等方向研究的上海研究机构。其机器人研究成果包括地形运动控制与人形机器人感知跑酷。",
+      "summaryEn": "A Shanghai research institute working on artificial intelligence and related areas, with robotics work on terrain locomotion and perceptive humanoid parkour.",
+      "topics": [
+        "Robot learning",
+        "Locomotion",
+        "Humanoids"
+      ],
+      "sources": [
+        {
+          "label": "Institute research report / 官方研究报道",
+          "url": "https://www.sqz.ac.cn/icra2025-623",
+          "verifiedAt": "2026-10-13"
+        },
+        {
+          "label": "Hiking in the Wild: paper affiliation / 论文署名",
+          "url": "https://arxiv.org/html/2601.07718v1",
+          "verifiedAt": "2026-10-13"
+        },
+        {
+          "label": "Official contact address / 官方联系地址",
+          "url": "https://www.sqz.ac.cn/performance",
+          "verifiedAt": "2026-10-13"
+        }
+      ],
+      "verifiedAt": "2026-10-13",
+      "location": {
+        "lat": 31.23,
+        "lon": 121.47,
+        "cityZh": "上海",
+        "cityEn": "Shanghai",
+        "locationType": "office",
+        "sourceUrl": "https://www.sqz.ac.cn/performance",
+        "precision": "city",
+        "verifiedAt": "2026-10-13",
+        "noteZh": "官方页面列出上海徐汇区办公地址；坐标仅表示城市。",
+        "noteEn": "The official site lists a Shanghai office address; coordinates represent the city only."
+      }
     }
   ],
   "labs": [
@@ -10981,6 +11031,35 @@
         {
           "label": "Primary research evidence / 原始研究依据",
           "url": "https://nosalro.github.io/andps/",
+          "verifiedAt": "2026-10-13"
+        }
+      ]
+    },
+    {
+      "id": "tsinghua-mars",
+      "organizationId": "tsinghua",
+      "name": "MARS Lab",
+      "nameZh": "清华 MARS 实验室",
+      "aliases": [
+        "Tsinghua MARS Lab"
+      ],
+      "url": "https://group.iiis.tsinghua.edu.cn/~marslab/",
+      "summaryZh": "赵行指导的清华机器人研究实验室；朱少廷在此研究机器人感知、运动控制与学习。",
+      "summaryEn": "Tsinghua robotics lab led by Hang Zhao, where Shaoting Zhu studies robot perception, locomotion and learning.",
+      "topics": [
+        "Robot learning",
+        "Locomotion",
+        "Humanoids"
+      ],
+      "sources": [
+        {
+          "label": "Shaoting Zhu: lab and advisor / 研究者主页",
+          "url": "https://shaotingzhu.github.io/",
+          "verifiedAt": "2026-10-13"
+        },
+        {
+          "label": "Official lab homepage / 实验室主页",
+          "url": "https://group.iiis.tsinghua.edu.cn/~marslab/",
           "verifiedAt": "2026-10-13"
         }
       ]
@@ -15226,7 +15305,8 @@
       "careerVerifiedAt": "2026-10-13",
       "researchPaperIds": [
         "bfm-zero",
-        "hold-my-beer"
+        "hold-my-beer",
+        "omg-humanoid"
       ],
       "topics": [
         "Humanoids",
@@ -15277,6 +15357,64 @@
         {
           "label": "CoRL 2025 proceedings / 第一作者",
           "url": "https://proceedings.mlr.press/v305/li25i.html",
+          "verifiedAt": "2026-10-13"
+        }
+      ]
+    },
+    {
+      "id": "shaoting-zhu",
+      "name": "Shaoting Zhu",
+      "nameZh": "朱少廷",
+      "aliases": [
+        "Zhu Shaoting"
+      ],
+      "homepage": "https://shaotingzhu.github.io/",
+      "careerStage": "doctoral",
+      "careerVerifiedAt": "2026-10-13",
+      "researchPaperIds": [
+        "hiking-in-the-wild",
+        "echo-in-the-steps",
+        "g05",
+        "omg-humanoid"
+      ],
+      "topics": [
+        "Humanoids",
+        "Locomotion",
+        "Robot learning",
+        "Computer vision",
+        "Sim-to-real"
+      ],
+      "summaryZh": "清华大学交叉信息研究院计算机科学博士生，在 MARS Lab 师从赵行；本科毕业于浙江大学。《Hiking in the Wild》共同第一作者，并参与 Echo in the Steps 等人形机器人研究。",
+      "summaryEn": "Computer Science PhD candidate at Tsinghua IIIS, advised by Hang Zhao in MARS Lab; previously a Zhejiang University undergraduate. Co-first author of Hiking in the Wild and a coauthor of Echo in the Steps and other humanoid robotics work.",
+      "affiliations": [
+        {
+          "organizationId": "tsinghua",
+          "labId": "tsinghua-mars",
+          "roleZh": "计算机科学博士生；导师赵行",
+          "roleEn": "Computer Science PhD candidate; advised by Hang Zhao",
+          "sourceUrl": "https://shaotingzhu.github.io/"
+        },
+        {
+          "organizationId": "zju",
+          "roleZh": "本科校友；曾在 APRIL Lab 与刘勇开展研究",
+          "roleEn": "Undergraduate alumnus; previously advised by Yong Liu in APRIL Lab",
+          "sourceUrl": "https://shaotingzhu.github.io/"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Personal homepage: Chinese name, degree and lab / 姓名与研究经历",
+          "url": "https://shaotingzhu.github.io/",
+          "verifiedAt": "2026-10-13"
+        },
+        {
+          "label": "Official Hiking in the Wild project / 代表作",
+          "url": "https://project-instinct.github.io/hiking-in-the-wild/",
+          "verifiedAt": "2026-10-13"
+        },
+        {
+          "label": "Institute profile / 官方研究报道",
+          "url": "https://www.sqz.ac.cn/icra2025-623",
           "verifiedAt": "2026-10-13"
         }
       ]
@@ -31041,6 +31179,96 @@
         {
           "label": "Conference publication / 会议记录",
           "url": "https://proceedings.mlr.press/v305/li25i.html",
+          "verifiedAt": "2026-10-13"
+        }
+      ],
+      "verifiedAt": "2026-10-13"
+    },
+    {
+      "id": "hiking-in-the-wild",
+      "title": "Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids",
+      "kind": "paper",
+      "date": "2026-01-12",
+      "organizationIds": [
+        "tsinghua",
+        "shanghai-qi-zhi"
+      ],
+      "labIds": [
+        "tsinghua-mars"
+      ],
+      "paperUrl": "https://arxiv.org/abs/2601.07718",
+      "projectUrl": "https://project-instinct.github.io/hiking-in-the-wild/",
+      "codeUrl": "https://github.com/project-instinct/InstinctLab/blob/main/source/instinctlab/instinctlab/tasks/parkour/README.md",
+      "venue": "CoRL 2026",
+      "status": "peer-reviewed",
+      "summaryZh": "从机载深度与本体感知直接学习人形机器人野外跑酷，通过地形边缘检测、足部体积点与可行落点采样减少滑落和奖励漏洞；单阶段强化学习策略在真实复杂地形上验证。",
+      "summaryEn": "Learns outdoor humanoid parkour directly from onboard depth and proprioception. Terrain-edge detection, foot-volume points and feasible target sampling support safer footholds and stable single-stage reinforcement learning, with real-world terrain validation.",
+      "signals": [
+        "peer-reviewed",
+        "code"
+      ],
+      "sources": [
+        {
+          "label": "arXiv paper / 原始论文",
+          "url": "https://arxiv.org/abs/2601.07718",
+          "verifiedAt": "2026-10-13"
+        },
+        {
+          "label": "CoRL 2026 project / 会议与项目",
+          "url": "https://project-instinct.github.io/hiking-in-the-wild/",
+          "verifiedAt": "2026-10-13"
+        },
+        {
+          "label": "Code / 代码",
+          "url": "https://github.com/project-instinct/InstinctLab/blob/main/source/instinctlab/instinctlab/tasks/parkour/README.md",
+          "verifiedAt": "2026-10-13"
+        }
+      ],
+      "verifiedAt": "2026-10-13"
+    },
+    {
+      "id": "omg-humanoid",
+      "title": "OMG: Omni-Modal Motion Generation for Generalist Humanoid Control",
+      "kind": "paper",
+      "date": "2026-06-09",
+      "organizationIds": [
+        "tsinghua"
+      ],
+      "labIds": [
+        "tsinghua-mars"
+      ],
+      "paperUrl": "https://arxiv.org/abs/2606.10340",
+      "projectUrl": "https://tsinghua-mars-lab.github.io/OMG/",
+      "codeUrl": "https://github.com/Tsinghua-MARS-Lab/OMG",
+      "modelUrl": "https://huggingface.co/THU-MARS/OMG",
+      "venue": "arXiv 2026",
+      "status": "preprint",
+      "summaryZh": "以多模态扩散动作生成器和底层跟踪控制器组成分层系统，将语言、音频和人类参考动作转为可执行的人形机器人全身运动；提供代码、模型和 OMG-Data 数据集。",
+      "summaryEn": "Combines a multimodal diffusion motion generator with a low-level tracker to turn language, audio and human motion references into executable humanoid trajectories. Code, model checkpoints and OMG-Data are publicly released.",
+      "signals": [
+        "code",
+        "weights",
+        "data"
+      ],
+      "sources": [
+        {
+          "label": "Original paper / 原始论文",
+          "url": "https://arxiv.org/abs/2606.10340",
+          "verifiedAt": "2026-10-13"
+        },
+        {
+          "label": "Official project / 官方项目",
+          "url": "https://tsinghua-mars-lab.github.io/OMG/",
+          "verifiedAt": "2026-10-13"
+        },
+        {
+          "label": "Model release / 模型发布",
+          "url": "https://huggingface.co/THU-MARS/OMG",
+          "verifiedAt": "2026-10-13"
+        },
+        {
+          "label": "Dataset release / 数据发布",
+          "url": "https://huggingface.co/datasets/THU-MARS/OMG-Data",
           "verifiedAt": "2026-10-13"
         }
       ],

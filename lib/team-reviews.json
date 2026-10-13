@@ -8090,5 +8090,100 @@
         "verifiedAt": "2026-10-13"
       }
     ]
+  },
+  {
+    "lineId": "lab:tsinghua-mars",
+    "status": "approved",
+    "category": "academic",
+    "paperIds": [
+      "hiking-in-the-wild",
+      "omg-humanoid"
+    ],
+    "region": "asia",
+    "topics": [
+      "humanoid",
+      "legged-locomotion",
+      "diffusion"
+    ],
+    "rationaleZh": "研究者主页确认清华 MARS Lab；Hiking in the Wild 与 OMG 的官方项目、论文和代码构成感知运动控制与多模态全身动作生成两项代表成果。",
+    "rationaleEn": "The researcher homepage identifies Tsinghua MARS Lab. Official projects, papers and code for Hiking in the Wild and OMG support perceptive locomotion and multimodal whole-body motion generation as two attributable outputs.",
+    "sources": [
+      {
+        "label": "Primary project evidence / 一手项目依据",
+        "url": "https://shaotingzhu.github.io/",
+        "verifiedAt": "2026-10-13"
+      },
+      {
+        "label": "Primary project evidence / 一手项目依据",
+        "url": "https://project-instinct.github.io/hiking-in-the-wild/",
+        "verifiedAt": "2026-10-13"
+      },
+      {
+        "label": "Primary project evidence / 一手项目依据",
+        "url": "https://tsinghua-mars-lab.github.io/OMG/",
+        "verifiedAt": "2026-10-13"
+      }
+    ],
+    "checkedAt": "2026-10-13",
+    "validationMode": "mixed",
+    "realRobotSources": [
+      {
+        "label": "Primary project evidence / 一手项目依据",
+        "url": "https://project-instinct.github.io/hiking-in-the-wild/",
+        "verifiedAt": "2026-10-13"
+      },
+      {
+        "label": "Primary project evidence / 一手项目依据",
+        "url": "https://tsinghua-mars-lab.github.io/OMG/",
+        "verifiedAt": "2026-10-13"
+      }
+    ],
+    "artifactSources": [
+      {
+        "label": "Primary project evidence / 一手项目依据",
+        "url": "https://github.com/project-instinct/InstinctLab",
+        "verifiedAt": "2026-10-13"
+      },
+      {
+        "label": "Primary project evidence / 一手项目依据",
+        "url": "https://github.com/Tsinghua-MARS-Lab/OMG",
+        "verifiedAt": "2026-10-13"
+      }
+    ],
+    "evaluationSources": [
+      {
+        "label": "Primary project evidence / 一手项目依据",
+        "url": "https://arxiv.org/abs/2601.07718",
+        "verifiedAt": "2026-10-13"
+      },
+      {
+        "label": "Primary project evidence / 一手项目依据",
+        "url": "https://arxiv.org/abs/2606.10340",
+        "verifiedAt": "2026-10-13"
+      }
+    ]
+  },
+  {
+    "lineId": "org:shanghai-qi-zhi",
+    "status": "pending",
+    "category": "institution-portfolio",
+    "paperIds": [
+      "hiking-in-the-wild"
+    ],
+    "region": "asia",
+    "topics": [
+      "humanoid",
+      "legged-locomotion"
+    ],
+    "rationaleZh": "原始论文确认上海期智研究院署名；当前仅有一项收录成果，尚不足以单列机构技术主线。",
+    "rationaleEn": "The original paper confirms Shanghai Qi Zhi Institute attribution. One currently cataloged output is insufficient for a separate institutional research line.",
+    "sources": [
+      {
+        "label": "Primary project evidence / 一手项目依据",
+        "url": "https://arxiv.org/html/2601.07718v1",
+        "verifiedAt": "2026-10-13"
+      }
+    ],
+    "checkedAt": "2026-10-13"
   }
 ]

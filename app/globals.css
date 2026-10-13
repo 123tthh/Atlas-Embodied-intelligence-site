@@ -4,6 +4,7 @@
 @import "tailwindcss";
 @import './research.css';
 @import './graph-navigation.css';
+@import './researcher-network.css';
 
 :root {
   color-scheme: light;

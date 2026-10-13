@@ -10115,7 +10115,10 @@
           "name": "Jiahui Niu"
         },
         {
-          "name": "Shaoting Zhu"
+          "name": "Shaoting Zhu",
+          "personId": "shaoting-zhu",
+          "nameZh": "朱少廷",
+          "url": "https://shaotingzhu.github.io/"
         },
         {
           "name": "Shiduo Zhang"
@@ -22688,7 +22691,9 @@
         },
         {
           "name": "Shaoting Zhu",
-          "url": "https://shaotingzhu.github.io/"
+          "url": "https://shaotingzhu.github.io/",
+          "personId": "shaoting-zhu",
+          "nameZh": "朱少廷"
         },
         {
           "name": "Haozhe Lou",
@@ -22762,7 +22767,8 @@
         {
           "name": "Yitang Li",
           "nameZh": "李忆唐",
-          "url": "https://liyitang22.github.io/"
+          "url": "https://liyitang22.github.io/",
+          "personId": "yitang-li"
         },
         {
           "name": "Zhengyi Luo"
@@ -22861,7 +22867,8 @@
         {
           "name": "Yitang Li",
           "nameZh": "李忆唐",
-          "url": "https://liyitang22.github.io/"
+          "url": "https://liyitang22.github.io/",
+          "personId": "yitang-li"
         },
         {
           "name": "Yuanhang Zhang"
@@ -22925,6 +22932,177 @@
         "legged-locomotion",
         "reinforcement-learning",
         "sim-to-real"
+      ]
+    },
+    {
+      "id": "hiking-in-the-wild",
+      "title": "Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids",
+      "short": "Hiking in the Wild",
+      "year": 2026,
+      "date": "2026-01-12",
+      "venue": "CoRL 2026",
+      "lane": "locomotion",
+      "tags": [
+        "Humanoid Parkour",
+        "Perceptive Locomotion",
+        "Terrain Safety",
+        "Reinforcement Learning",
+        "Sim-to-Real"
+      ],
+      "authors": [
+        {
+          "name": "Shaoting Zhu",
+          "nameZh": "朱少廷",
+          "url": "https://shaotingzhu.github.io/",
+          "personId": "shaoting-zhu"
+        },
+        {
+          "name": "Ziwen Zhuang",
+          "url": "https://ziwenzhuang.github.io/"
+        },
+        {
+          "name": "Mengjie Zhao",
+          "url": "https://qxjyqzw.github.io/"
+        },
+        {
+          "name": "Kun-Ying Lee"
+        },
+        {
+          "name": "Hang Zhao",
+          "url": "https://hangzhaomit.github.io/"
+        }
+      ],
+      "organizationIds": [
+        "tsinghua",
+        "shanghai-qi-zhi"
+      ],
+      "labIds": [
+        "tsinghua-mars"
+      ],
+      "teams": [
+        "Tsinghua University",
+        "MARS Lab",
+        "Shanghai Qi Zhi Institute"
+      ],
+      "project": "https://project-instinct.github.io/hiking-in-the-wild/",
+      "arxiv": "https://arxiv.org/abs/2601.07718",
+      "code": "https://github.com/project-instinct/InstinctLab/blob/main/source/instinctlab/instinctlab/tasks/parkour/README.md",
+      "summary": "从机载深度与本体感知直接学习人形机器人野外跑酷，通过地形边缘检测、足部体积点与可行落点采样减少滑落和奖励漏洞；单阶段强化学习策略在真实复杂地形上验证。",
+      "summaryEn": "Learns outdoor humanoid parkour directly from onboard depth and proprioception. Terrain-edge detection, foot-volume points and feasible target sampling support safer footholds and stable single-stage reinforcement learning, with real-world terrain validation.",
+      "sources": [
+        "https://arxiv.org/abs/2601.07718",
+        "https://project-instinct.github.io/hiking-in-the-wild/",
+        "https://shaotingzhu.github.io/",
+        "https://arxiv.org/html/2601.07718v1"
+      ],
+      "publicationStatus": "peer-reviewed",
+      "recognitions": [],
+      "verifiedAt": "2026-10-13",
+      "datePrecision": "day",
+      "subfields": [
+        "humanoid",
+        "legged-locomotion",
+        "reinforcement-learning",
+        "sim-to-real"
+      ],
+      "verificationNotes": [
+        {
+          "url": "https://project-instinct.github.io/hiking-in-the-wild/",
+          "supports": "Official project lists CoRL 2026, equal contribution by Shaoting Zhu and Ziwen Zhuang, and Hang Zhao as corresponding author."
+        },
+        {
+          "url": "https://arxiv.org/html/2601.07718v1",
+          "supports": "Paper affiliations include Tsinghua University and Shanghai Qi Zhi Institute. Current lab membership is corroborated by Shaoting Zhu’s homepage."
+        }
+      ]
+    },
+    {
+      "id": "omg-humanoid",
+      "title": "OMG: Omni-Modal Motion Generation for Generalist Humanoid Control",
+      "short": "OMG",
+      "year": 2026,
+      "date": "2026-06-09",
+      "venue": "arXiv 2026",
+      "lane": "locomotion",
+      "tags": [
+        "Humanoids",
+        "Motion Generation",
+        "Diffusion",
+        "Multimodal Control",
+        "Whole-body Control"
+      ],
+      "authors": [
+        {
+          "name": "Siqiao Huang"
+        },
+        {
+          "name": "Kun-Ying Lee"
+        },
+        {
+          "name": "Dongming Qiao"
+        },
+        {
+          "name": "Guanqi He"
+        },
+        {
+          "name": "Zhenyu Wang"
+        },
+        {
+          "name": "Yitang Li",
+          "nameZh": "李忆唐",
+          "personId": "yitang-li",
+          "url": "https://liyitang22.github.io/"
+        },
+        {
+          "name": "Shaoting Zhu",
+          "nameZh": "朱少廷",
+          "personId": "shaoting-zhu",
+          "url": "https://shaotingzhu.github.io/"
+        },
+        {
+          "name": "Hang Zhao",
+          "url": "https://hangzhaomit.github.io/"
+        }
+      ],
+      "organizationIds": [
+        "tsinghua"
+      ],
+      "labIds": [
+        "tsinghua-mars"
+      ],
+      "teams": [
+        "Tsinghua University",
+        "MARS Lab"
+      ],
+      "project": "https://tsinghua-mars-lab.github.io/OMG/",
+      "arxiv": "https://arxiv.org/abs/2606.10340",
+      "code": "https://github.com/Tsinghua-MARS-Lab/OMG",
+      "modelUrl": "https://huggingface.co/THU-MARS/OMG",
+      "summary": "以多模态扩散动作生成器和底层跟踪控制器组成分层系统，将语言、音频和人类参考动作转为可执行的人形机器人全身运动；提供代码、模型和 OMG-Data 数据集。",
+      "summaryEn": "Combines a multimodal diffusion motion generator with a low-level tracker to turn language, audio and human motion references into executable humanoid trajectories. Code, model checkpoints and OMG-Data are publicly released.",
+      "sources": [
+        "https://arxiv.org/abs/2606.10340",
+        "https://tsinghua-mars-lab.github.io/OMG/",
+        "https://github.com/Tsinghua-MARS-Lab/OMG"
+      ],
+      "publicationStatus": "preprint",
+      "recognitions": [],
+      "verifiedAt": "2026-10-13",
+      "datePrecision": "day",
+      "subfields": [
+        "humanoid",
+        "diffusion",
+        "robot-data"
+      ],
+      "verificationNotes": [
+        {
+          "url": "https://tsinghua-mars-lab.github.io/OMG/",
+          "supports": "Official project lists all eight authors, Tsinghua University affiliation and code/model/data links. Yitang Li and Shaoting Zhu are coauthors."
+        },
+        {
+          "url": "https://github.com/Tsinghua-MARS-Lab/OMG",
+          "supports": "Repository reports ExWBC@RSS 2026 Oral and RoboData@RSS 2026 Spotlight workshop presentations; the catalog does not claim an RSS main-conference acceptance."
+        }
       ]
     }
   ],

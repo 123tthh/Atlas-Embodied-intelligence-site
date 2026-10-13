@@ -310,5 +310,7 @@
   "按实验室与团队追踪技术主线、联合工作和原始依据。": "Follow labs and teams through research lines, joint work and primary evidence.",
   "按研究方向、机构与代表成果，发现研究者和在读学生。": "Discover researchers and students through research areas, institutions and representative work.",
   "留个邮箱与建议，一起完善这张研究地图。": "Leave your email and a suggestion to help improve this atlas.",
-  "访客收藏保存在当前浏览器，可导入导出；登录收藏保存在云端。社区留言无需账号与密码，邮箱和建议仅维护者可见；结构化论文投稿可选择登录后提交并跟踪审核。只有维护者能批准发布。站外检索由目标网站提供，本站不会自动抓取 Google Scholar。": "Guest bookmarks stay in your browser and can be imported or exported. Signed-in bookmarks are stored in the cloud. The community inbox needs no account or password, and only maintainers can read emails and suggestions. Structured research submissions and review tracking are optional signed-in tools. Only maintainers can approve publication. External searches are provided by their respective websites; this site does not crawl Google Scholar."
+  "访客收藏保存在当前浏览器，可导入导出；登录收藏保存在云端。社区留言无需账号与密码，邮箱和建议仅维护者可见；结构化论文投稿可选择登录后提交并跟踪审核。只有维护者能批准发布。站外检索由目标网站提供，本站不会自动抓取 Google Scholar。": "Guest bookmarks stay in your browser and can be imported or exported. Signed-in bookmarks are stored in the cloud. The community inbox needs no account or password, and only maintainers can read emails and suggestions. Structured research submissions and review tracking are optional signed-in tools. Only maintainers can approve publication. External searches are provided by their respective websites; this site does not crawl Google Scholar.",
+  "人物关系网": "People network",
+  "沿共同署名的论文，探索研究者的合作圈与最短连接。": "Explore coauthor circles and shortest connections through shared papers."
 }
